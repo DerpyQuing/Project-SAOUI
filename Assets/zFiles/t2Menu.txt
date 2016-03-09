@@ -1,0 +1,19 @@
+Equipment
+Items
+Skills
+-----------
+Party
+Friend
+Guild
+-----------
+Befriend
+Trade
+Duel
+-----------
+Field Map
+Dungeon Map
+Quests
+-----------
+Options
+Help
+Logout
