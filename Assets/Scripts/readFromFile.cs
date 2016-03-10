@@ -1,31 +1,11 @@
-﻿using System.Text;
-using System.IO;
-using System.Collections;
-using System.Collections.Generic;
-using System;
+﻿using SimpleJSON;
+using UnityEngine;
 
-public class readFromFile {
-
-	public List<string> results = new List<string>();
-
-	public List<string> Load(string fileName) {
-		try {
-			string line;
-			StreamReader theReader = new StreamReader(fileName, Encoding.Default);
-			using (theReader) {
-				do {
-					line = theReader.ReadLine();
-					if (line != null && line != "----------") {
-						results.Add(line);
-					}
-				}
-				while (line != null);
-				theReader.Close();
-				return results;
-			}
-		} catch (Exception e) {
-			//Console.WriteLine("{0}\n", e.Message);
-			return null;
-		}
+public class readFromFile : MonoBehaviour {
+	public string LoadJSONResourceFile(string path) {
+		string filePath = path.Replace(".json", "");
+		TextAsset targetFile = Resources.Load<TextAsset>(filePath);
+		return targetFile.text;
 	}
+
 }

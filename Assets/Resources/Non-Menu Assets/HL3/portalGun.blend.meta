@@ -1,0 +1,120 @@
+fileFormatVersion: 2
+guid: d6d4f1a1a1b3ca042bc4b9a9495a267a
+timeCreated: 1443414866
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Portal_Controll_Lamp_Socket_MeshPart0
+    100002: Portal_Controll_Lamp_Socket_MeshPart1
+    100004: Portal_Controll_Lamp_Socket_MeshPart2
+    100006: Portal_Controll_Lamp_Socket_MeshPart3
+    100008: Portal_Controll_Lamp_Socket_MeshPart4
+    100010: Portal_Controll_Lamp_Socket_MeshPart5
+    100012: Portal_Controll_Lamp_Socket_MeshPart6
+    100014: Portal_Controll_Lamp_Socket_MeshPart7
+    100016: Portal_Controll_Lamp_Socket_MeshPart8
+    100018: //RootNode
+    400000: Portal_Controll_Lamp_Socket_MeshPart0
+    400002: Portal_Controll_Lamp_Socket_MeshPart1
+    400004: Portal_Controll_Lamp_Socket_MeshPart2
+    400006: Portal_Controll_Lamp_Socket_MeshPart3
+    400008: Portal_Controll_Lamp_Socket_MeshPart4
+    400010: Portal_Controll_Lamp_Socket_MeshPart5
+    400012: Portal_Controll_Lamp_Socket_MeshPart6
+    400014: Portal_Controll_Lamp_Socket_MeshPart7
+    400016: Portal_Controll_Lamp_Socket_MeshPart8
+    400018: //RootNode
+    2300000: Portal_Controll_Lamp_Socket_MeshPart0
+    2300002: Portal_Controll_Lamp_Socket_MeshPart1
+    2300004: Portal_Controll_Lamp_Socket_MeshPart2
+    2300006: Portal_Controll_Lamp_Socket_MeshPart3
+    2300008: Portal_Controll_Lamp_Socket_MeshPart4
+    2300010: Portal_Controll_Lamp_Socket_MeshPart5
+    2300012: Portal_Controll_Lamp_Socket_MeshPart6
+    2300014: Portal_Controll_Lamp_Socket_MeshPart7
+    2300016: Portal_Controll_Lamp_Socket_MeshPart8
+    3300000: Portal_Controll_Lamp_Socket_MeshPart0
+    3300002: Portal_Controll_Lamp_Socket_MeshPart1
+    3300004: Portal_Controll_Lamp_Socket_MeshPart2
+    3300006: Portal_Controll_Lamp_Socket_MeshPart3
+    3300008: Portal_Controll_Lamp_Socket_MeshPart4
+    3300010: Portal_Controll_Lamp_Socket_MeshPart5
+    3300012: Portal_Controll_Lamp_Socket_MeshPart6
+    3300014: Portal_Controll_Lamp_Socket_MeshPart7
+    3300016: Portal_Controll_Lamp_Socket_MeshPart8
+    4300000: Portal_Controll_Lamp_Socket_MeshPart0
+    4300002: Portal_Controll_Lamp_Socket_MeshPart1
+    4300004: Portal_Controll_Lamp_Socket_MeshPart2
+    4300006: Portal_Controll_Lamp_Socket_MeshPart3
+    4300008: Portal_Controll_Lamp_Socket_MeshPart4
+    4300010: Portal_Controll_Lamp_Socket_MeshPart5
+    4300012: Portal_Controll_Lamp_Socket_MeshPart6
+    4300014: Portal_Controll_Lamp_Socket_MeshPart7
+    4300016: Portal_Controll_Lamp_Socket_MeshPart8
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

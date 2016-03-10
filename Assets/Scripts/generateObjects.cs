@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Text;
 using System.IO;
-using System.Collections;
 using System.Collections.Generic;
 using System;
 
@@ -10,11 +9,6 @@ public class generateObjects : MonoBehaviour {
 	
 	void Start () {
 
-		readFromFile rff = new readFromFile();
-		List<string> armor = rff.Load(Application.dataPath + "/zFiles/armorList.txt");
-
-		Debug.Log(armor[0]);
-	
 		for(int layerOne = 0; layerOne < 5; layerOne++) {
 			GameObject layerOneObj = new GameObject();
 			layerOneObj.transform.SetParent(this.transform);

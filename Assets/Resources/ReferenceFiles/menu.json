@@ -1,0 +1,98 @@
+{
+   "Menu": {
+      "Player": {
+            "Equipment": {
+               "Weapons":[
+                  "Simple Sword",
+                  "Simple Shield"
+               ],
+           
+               "Armor":[
+                  "Cloak of Midnight"
+               ],
+
+               "Accessory":[
+                  "Ring of Strength"
+               ]
+            },
+        
+            "Items":[
+               "Space Rifle",
+               "M4-A1",
+               "Kagemitsu",
+               "Portal Gun",
+               "Elucidator",
+               "MP7",
+               "Dark Requlser"
+            ],
+       
+            "Skills":[
+               "Battle Healing",
+               "Blade Throwing",
+               "Dual Blades",
+               "One-Handed",
+               "Parrying",
+               "Searching",
+               "Tracking"
+            ]
+         },
+    
+      "Party": {
+            "Party":[
+               "Create",
+               "Invite",
+               "Dissolve"
+            ],
+        
+            "Friends":[
+               "Kirito",
+               "Asuna",
+               "Sugu",
+               "Klien",
+               "Lizbeth",
+               "Max",
+               "Jack",
+               "James"
+            ],
+        
+            "Guild":[
+
+            ]
+         },
+      
+      "Message":[
+         "Befriend",
+         "Trade",
+         "Duel",
+         "Marriage"
+      ],
+ 
+      "Location":[
+         "Field Map",
+         "Dungeon Map",
+         "Quests"
+      ],
+   
+      "Settings":[
+         "Options",
+         "Help",
+         "Logout"
+      ]
+   },
+        
+   "Misc": {
+         "FriendChildren":[
+            "Message Box",
+            "Position Check",
+            "Profile"
+         ], 
+
+         "ItemChildren":[
+            "Start",
+            "Minus",
+            "Dissolve"
+         ]
+      }
+}
+ 
+
