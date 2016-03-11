@@ -1,0 +1,246 @@
+{
+   "Menu":{
+      "Player":{
+         "_baseIconPath":"SAO/Icons/Player",
+         "_activeIconPath":"SAO/Icons/Player_on",
+         "Equipment":{
+            "_baseIconPath":"SAO/Icons/Equipment",
+            "_activeIconPath":"SAO/Icons/Equipment_on",
+            "Weapons":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "Simple Sword":{
+                  "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               },
+               "Simple Shield":{
+                  "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               }
+            },
+            "Armor":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "Cloak of Midnight":{
+                  "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               }
+            },
+            "Accessory":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "Ring of Strength":{
+                  "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on",
+               }
+            }
+         },
+         "Items":{
+            "_baseIconPath":"SAO/Icons/Items",
+            "_activeIconPath":"SAO/Icons/Items_on",
+            "Space Rifle":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "M4-A1":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "Kagemitsu":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "Portal Gun":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "Elucidator":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "MP7":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            },
+            "Dark Requlser":{
+               "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+            }
+         },
+         "Skills":{
+            "_baseIconPath":"SAO/Icons/Skills",
+            "_activeIconPath":"SAO/Icons/Skills_on",
+            "Battle Healing":{
+               "_baseIconPath":"SAO/Icons/Battle Healing",
+               "_activeIconPath":"SAO/Icons/Battle Healing_on"
+            },
+            "Blade Throwing":{
+               "_baseIconPath":"SAO/Icons/Blade Throwing",
+               "_activeIconPath":"SAO/Icons/Blade Throwing_on"
+            },
+            "Dual Blades":{
+               "_baseIconPath":"SAO/Icons/Dual Blades",
+               "_activeIconPath":"SAO/Icons/Dual Blades_on"
+            },
+            "One-Handed":{
+               "_baseIconPath":"SAO/Icons/One-Handed",
+               "_activeIconPath":"SAO/Icons/One-Handed_on"
+            },
+            "Parrying":{
+               "_baseIconPath":"SAO/Icons/Parrying",
+               "_activeIconPath":"SAO/Icons/Parrying_on"
+            },
+            "Searching":{
+               "_baseIconPath":"SAO/Icons/Searching",
+               "_activeIconPath":"SAO/Icons/Searching_on"
+            },
+            "Tracking":{
+               "_baseIconPath":"SAO/Icons/Tracking",
+               "_activeIconPath":"SAO/Icons/Tracking_on"
+            }
+         }
+      },
+      "Party":{
+         "_baseIconPath":"SAO/Icons/Party_",
+         "_activeIconPath":"SAO/Icons/Party__on",
+         "Party":{
+            "_baseIconPath":"SAO/Icons/Party",
+            "_activeIconPath":"SAO/Icons/Party_on",
+            "Create":{
+               "_baseIconPath":"SAO/Icons/Create",
+               "_activeIconPath":"SAO/Icons/Create_on"
+            },
+            "Invite":{
+               "_baseIconPath":"SAO/Icons/Invite",
+               "_activeIconPath":"SAO/Icons/Invite_on"
+            },
+            "Dissolve":{
+               "_baseIconPath":"SAO/Icons/Dissolve",
+               "_activeIconPath":"SAO/Icons/Dissolve_on"
+            }
+         },
+         "Friends":{
+            "_baseIconPath":"SAO/Icons/Player__",
+            "_activeIconPath":"SAO/Icons/Player___on",
+            "Kirito":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Asuna":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Sugu":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Klien":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Lizbeth":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Max":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "Jack":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            },
+            "James":{
+               "_baseIconPath":"SAO/Icons/Player__",
+               "_activeIconPath":"SAO/Icons/Player___on"
+            }
+         },
+         "Guild":{
+            "_baseIconPath":"SAO/Icons/Guild",
+            "_activeIconPath":"SAO/Icons/Guild_on"
+         }
+      },
+      "Message":{
+         "_baseIconPath":"",
+         "_activeIconPath":"",
+         "Befriend":{
+            "_baseIconPath":"SAO/Icons/Help",
+            "_activeIconPath":"SAO/Icons/Help_on"
+         },
+         "Trade":{
+            "_baseIconPath":"SAO/Icons/Help",
+            "_activeIconPath":"SAO/Icons/Help_on"
+         },
+         "Duel":{
+            "_baseIconPath":"SAO/Icons/Help",
+            "_activeIconPath":"SAO/Icons/Help_on"
+         },
+         "Marriage":{
+            "_baseIconPath":"SAO/Icons/Help",
+            "_activeIconPath":"SAO/Icons/Help_on"
+         }
+      },
+      "Location":{
+         "_baseIconPath":"SAO/Icons/Location",
+         "_activeIconPath":"SAO/Icons/Location_on",
+         "Field Map":{
+            "_baseIconPath":"SAO/Icons/Field Map",
+            "_activeIconPath":"SAO/Icons/Field Map_on"
+         },
+         "Dungeon Map":{
+            "_baseIconPath":"SAO/Icons/Dungeon Map",
+            "_activeIconPath":"SAO/Icons/SAO/Icons/Dungeon Map_on"
+         },
+         "Quests":{
+            "_baseIconPath":"SAO/Icons/Quests",
+            "_activeIconPath":"SAO/Icons/Quests_on"
+         }
+      },
+      "Settings":{
+         "_baseIconPath":"SAO/Icons/Settings",
+         "_activeIconPath":"SAO/Icons/Settings_on",
+         "Options":{
+            "_baseIconPath":"SAO/Icons/Options",
+            "_activeIconPath":"SAO/Icons/Options_on"
+         },
+         "Help":{
+            "_baseIconPath":"SAO/Icons/Help",
+               "_activeIconPath":"SAO/Icons/Help_on"
+         },
+         "Logout":{
+            "_baseIconPath":"SAO/Icons/Logout",
+            "_activeIconPath":"SAO/Icons/Logout_on"
+         }
+      }
+   },
+   "Misc":{
+      "FriendChildren":{
+         "Message Box":{
+            "_baseIconPath":"SAO/Icons/Message Box",
+            "_activeIconPath":"SAO/Icons/Message Box_on"
+         },
+         "Position Check":{
+            "_baseIconPath":"SAO/Icons/Position Check",
+            "_activeIconPath":"SAO/Icons/Position Check_on"
+         },
+         "Profile":{
+            "_baseIconPath":"SAO/Icons/Profile",
+            "_activeIconPath":"SAO/Icons/Profile_on"
+         }
+      },
+      "ItemChildren":{
+         "Start":{
+            "_baseIconPath":"SAO/Icons/Start",
+            "_activeIconPath":"SAO/Icons/Start_on"
+         },
+         "Minus":{
+            "_baseIconPath":"SAO/Icons/Minus",
+            "_activeIconPath":"SAO/Icons/Minus_on"
+         },
+         "Dissolve":{
+            "_baseIconPath":"SAO/Icons/Dissolve_on",
+            "_activeIconPath":"SAO/Icons/Dissolve_on"
+         }
+      }
+   }
+}

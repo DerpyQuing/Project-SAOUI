@@ -578,6 +578,13 @@ namespace SimpleJSON
             stream.Position = 0;
             return LoadFromStream(stream);
         }
+
+		// Start Mine
+		
+		public virtual IEnumerable<string> Keys { get { yield break; } }
+		// End Mine
+
+
     } // End of JSONNode
  
     public class JSONArray : JSONNode, IEnumerable
@@ -714,6 +721,20 @@ namespace SimpleJSON
         {
             get { return m_Dict.Count; }
         }
+
+		// Start
+		// I (Scub3d) added this so I could access the keys in the json object
+
+		public override IEnumerable<string> Keys
+		{
+			get 
+			{
+				foreach(var key in m_Dict.Keys)
+					yield return key;
+			}
+		}
+
+		// End 
  
  
         public override void Add(string aKey, JSONNode aItem)

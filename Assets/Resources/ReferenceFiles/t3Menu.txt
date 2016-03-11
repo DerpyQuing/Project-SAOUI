@@ -1,7 +1,0 @@
-Weapons
-Armor
-Accessory
-----------
-Create
-Invite
-Dissolve
