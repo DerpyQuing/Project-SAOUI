@@ -3,243 +3,771 @@
       "Player":{
          "_baseIconPath":"SAO/Icons/Player",
          "_activeIconPath":"SAO/Icons/Player_on",
+         "_text":null,
+         "_hasChildren":true,
+         "_itemShape":"circle",
          "Equipment":{
             "_baseIconPath":"SAO/Icons/Equipment",
             "_activeIconPath":"SAO/Icons/Equipment_on",
+            "_text":null,
+            "_hasChildren":true,
+            "_itemShape":"rectangle",
             "Weapons":{
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":null,
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
                "Simple Sword":{
                   "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on",
+                  "_activeIconPath":"SAO/Icons/Help_on",
+                  "_text":"Simple Sword",
+                  "_hasChildren":true,
+                  "_itemShape":"rectangle",
+                  "Start":{
+                     "_baseIconPath":"SAO/Icons/Start",
+                     "_activeIconPath":"SAO/Icons/Start_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Minus":{
+                     "_baseIconPath":"SAO/Icons/Minus",
+                     "_activeIconPath":"SAO/Icons/Minus_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Dissolve":{
+                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_activeIconPath":"SAO/Icons/Dissolve_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  }
                },
                "Simple Shield":{
                   "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on",
+                  "_activeIconPath":"SAO/Icons/Help_on",
+                  "_text":"Simple Sheild",
+                  "_hasChildren":true,
+                  "_itemShape":"rectangle",
+                  "Start":{
+                     "_baseIconPath":"SAO/Icons/Start",
+                     "_activeIconPath":"SAO/Icons/Start_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Minus":{
+                     "_baseIconPath":"SAO/Icons/Minus",
+                     "_activeIconPath":"SAO/Icons/Minus_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Dissolve":{
+                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_activeIconPath":"SAO/Icons/Dissolve_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  }
                }
             },
             "Armor":{
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":null,
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
                "Cloak of Midnight":{
                   "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on",
+                  "_activeIconPath":"SAO/Icons/Help_on",
+                  "_text":"Cloak of Midnight",
+                  "_hasChildren":true,
+                  "_itemShape":"rectangle",
+                  "Start":{
+                     "_baseIconPath":"SAO/Icons/Start",
+                     "_activeIconPath":"SAO/Icons/Start_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Minus":{
+                     "_baseIconPath":"SAO/Icons/Minus",
+                     "_activeIconPath":"SAO/Icons/Minus_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Dissolve":{
+                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_activeIconPath":"SAO/Icons/Dissolve_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  }
                }
             },
             "Accessory":{
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":null,
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
                "Ring of Strength":{
                   "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on",
+                  "_activeIconPath":"SAO/Icons/Help_on",
+                  "_text":"Ring of Strength",
+                  "_hasChildren":true,
+                  "_itemShape":"rectangle",
+                  "Start":{
+                     "_baseIconPath":"SAO/Icons/Start",
+                     "_activeIconPath":"SAO/Icons/Start_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Minus":{
+                     "_baseIconPath":"SAO/Icons/Minus",
+                     "_activeIconPath":"SAO/Icons/Minus_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  },
+                  "Dissolve":{
+                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_activeIconPath":"SAO/Icons/Dissolve_on",
+                     "_text":null,
+                     "_hasChildren":false,
+                     "_itemShape":"circle"
+                  }
                }
             }
          },
          "Items":{
             "_baseIconPath":"SAO/Icons/Items",
             "_activeIconPath":"SAO/Icons/Items_on",
+            "_text":null,
+            "_hasChildren":true,
+            "_itemShape":"rectangle",
             "Space Rifle":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"Space Rifle",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "M4-A1":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"M4-A1",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "Kagemitsu":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"Kagemitsu",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "Portal Gun":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"Portal Gun",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "Elucidator":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"Elucidator",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "MP7":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":null,
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             },
             "Dark Requlser":{
                "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+               "_activeIconPath":"SAO/Icons/Help_on",
+               "_text":"Dark Requlser",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Start":{
+                  "_baseIconPath":"SAO/Icons/Start",
+                  "_activeIconPath":"SAO/Icons/Start_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Minus":{
+                  "_baseIconPath":"SAO/Icons/Minus",
+                  "_activeIconPath":"SAO/Icons/Minus_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               },
+               "Dissolve":{
+                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_activeIconPath":"SAO/Icons/Dissolve_on",
+                  "_text":null,
+                  "_hasChildren":false,
+                  "_itemShape":"circle"
+               }
             }
          },
          "Skills":{
             "_baseIconPath":"SAO/Icons/Skills",
             "_activeIconPath":"SAO/Icons/Skills_on",
+            "_text":null,
+            "_hasChildren":true,
+            "_itemShape":"rectangle",
             "Battle Healing":{
                "_baseIconPath":"SAO/Icons/Battle Healing",
-               "_activeIconPath":"SAO/Icons/Battle Healing_on"
+               "_activeIconPath":"SAO/Icons/Battle Healing_on",
+               "_text":"Battle Healing",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Blade Throwing":{
                "_baseIconPath":"SAO/Icons/Blade Throwing",
-               "_activeIconPath":"SAO/Icons/Blade Throwing_on"
+               "_activeIconPath":"SAO/Icons/Blade Throwing_on",
+               "_text":"Blade Throwing",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Dual Blades":{
                "_baseIconPath":"SAO/Icons/Dual Blades",
-               "_activeIconPath":"SAO/Icons/Dual Blades_on"
+               "_activeIconPath":"SAO/Icons/Dual Blades_on",
+               "_text":"Dual Blades",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "One-Handed":{
                "_baseIconPath":"SAO/Icons/One-Handed",
-               "_activeIconPath":"SAO/Icons/One-Handed_on"
+               "_activeIconPath":"SAO/Icons/One-Handed_on",
+               "_text":"One-Handed",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Parrying":{
                "_baseIconPath":"SAO/Icons/Parrying",
-               "_activeIconPath":"SAO/Icons/Parrying_on"
+               "_activeIconPath":"SAO/Icons/Parrying_on",
+               "_text":"Parrying",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Searching":{
                "_baseIconPath":"SAO/Icons/Searching",
-               "_activeIconPath":"SAO/Icons/Searching_on"
+               "_activeIconPath":"SAO/Icons/Searching_on",
+               "_text":"Searching",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Tracking":{
                "_baseIconPath":"SAO/Icons/Tracking",
-               "_activeIconPath":"SAO/Icons/Tracking_on"
+               "_activeIconPath":"SAO/Icons/Tracking_on",
+               "_text":"Tracking",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             }
          }
       },
       "Party":{
          "_baseIconPath":"SAO/Icons/Party_",
          "_activeIconPath":"SAO/Icons/Party__on",
+         "_text":null,
+         "_hasChildren":true,
+         "_itemShape":"circle",
          "Party":{
             "_baseIconPath":"SAO/Icons/Party",
             "_activeIconPath":"SAO/Icons/Party_on",
+            "_text":"Party",
+            "_hasChildren":true,
+            "_itemShape":"rectangle",
             "Create":{
                "_baseIconPath":"SAO/Icons/Create",
-               "_activeIconPath":"SAO/Icons/Create_on"
+               "_activeIconPath":"SAO/Icons/Create_on",
+               "_text":"Create",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Invite":{
                "_baseIconPath":"SAO/Icons/Invite",
-               "_activeIconPath":"SAO/Icons/Invite_on"
+               "_activeIconPath":"SAO/Icons/Invite_on",
+               "_text":"Invite",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             },
             "Dissolve":{
                "_baseIconPath":"SAO/Icons/Dissolve",
-               "_activeIconPath":"SAO/Icons/Dissolve_on"
+               "_activeIconPath":"SAO/Icons/Dissolve_on",
+               "_text":"Dissolve",
+               "_hasChildren":false,
+               "_itemShape":"rectangle"
             }
          },
          "Friends":{
             "_baseIconPath":"SAO/Icons/Player__",
             "_activeIconPath":"SAO/Icons/Player___on",
+            "_text":"Friends",
+            "_hasChildren":true,
+            "_itemShape":"rectangle",
             "Kirito":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Kirito",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Asuna":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Asuna",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Sugu":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Sugu",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Klien":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Klien",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Lizbeth":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Lizbeth",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Max":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Max",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "Jack":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"Jack",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             },
             "James":{
                "_baseIconPath":"SAO/Icons/Player__",
-               "_activeIconPath":"SAO/Icons/Player___on"
+               "_activeIconPath":"SAO/Icons/Player___on",
+               "_text":"James",
+               "_hasChildren":true,
+               "_itemShape":"rectangle",
+               "Message Box":{
+                  "_baseIconPath":"SAO/Icons/Message Box",
+                  "_activeIconPath":"SAO/Icons/Message Box_on",
+                  "_text":"Message Box",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Position Check":{
+                  "_baseIconPath":"SAO/Icons/Position Check",
+                  "_activeIconPath":"SAO/Icons/Position Check_on",
+                  "_text":"Position Check",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               },
+               "Profile":{
+                  "_baseIconPath":"SAO/Icons/Profile",
+                  "_activeIconPath":"SAO/Icons/Profile_on",
+                  "_text":"Profile",
+                  "_hasChildren":false,
+                  "_itemShape":"rectangle"
+               }
             }
          },
          "Guild":{
             "_baseIconPath":"SAO/Icons/Guild",
-            "_activeIconPath":"SAO/Icons/Guild_on"
+            "_activeIconPath":"SAO/Icons/Guild_on",
+            "_text":"Guild",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          }
       },
       "Message":{
-         "_baseIconPath":"",
-         "_activeIconPath":"",
+         "_baseIconPath":"SAO/Icons/Message",
+         "_activeIconPath":"SAO/Icons/Message",
+         "_text":null,
+         "_hasChildren":true,
+         "_itemShape":"circle",
          "Befriend":{
             "_baseIconPath":"SAO/Icons/Help",
-            "_activeIconPath":"SAO/Icons/Help_on"
+            "_activeIconPath":"SAO/Icons/Help_on",
+            "_text":"Befriend",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Trade":{
             "_baseIconPath":"SAO/Icons/Help",
-            "_activeIconPath":"SAO/Icons/Help_on"
+            "_activeIconPath":"SAO/Icons/Help_on",
+            "_text":"Trade",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Duel":{
             "_baseIconPath":"SAO/Icons/Help",
-            "_activeIconPath":"SAO/Icons/Help_on"
+            "_activeIconPath":"SAO/Icons/Help_on",
+            "_text":"Duel",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Marriage":{
             "_baseIconPath":"SAO/Icons/Help",
-            "_activeIconPath":"SAO/Icons/Help_on"
+            "_activeIconPath":"SAO/Icons/Help_on",
+            "_text":"Marriage",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          }
       },
       "Location":{
          "_baseIconPath":"SAO/Icons/Location",
          "_activeIconPath":"SAO/Icons/Location_on",
+         "_text":null,
+         "_hasChildren":true,
+         "_itemShape":"circle",
          "Field Map":{
             "_baseIconPath":"SAO/Icons/Field Map",
-            "_activeIconPath":"SAO/Icons/Field Map_on"
+            "_activeIconPath":"SAO/Icons/Field Map_on",
+            "_text":"Field Map",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Dungeon Map":{
             "_baseIconPath":"SAO/Icons/Dungeon Map",
-            "_activeIconPath":"SAO/Icons/SAO/Icons/Dungeon Map_on"
+            "_activeIconPath":"SAO/Icons/SAO/Icons/Dungeon Map_on",
+            "_text":"Dungeon Map",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Quests":{
             "_baseIconPath":"SAO/Icons/Quests",
-            "_activeIconPath":"SAO/Icons/Quests_on"
+            "_activeIconPath":"SAO/Icons/Quests_on",
+            "_text":"Quests",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          }
       },
       "Settings":{
          "_baseIconPath":"SAO/Icons/Settings",
          "_activeIconPath":"SAO/Icons/Settings_on",
+         "_text":null,
+         "_hasChildren":true,
+         "_itemShape":"circle",
          "Options":{
             "_baseIconPath":"SAO/Icons/Options",
-            "_activeIconPath":"SAO/Icons/Options_on"
+            "_activeIconPath":"SAO/Icons/Options_on",
+            "_text":"Options",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Help":{
             "_baseIconPath":"SAO/Icons/Help",
-               "_activeIconPath":"SAO/Icons/Help_on"
+            "_activeIconPath":"SAO/Icons/Help_on",
+            "_text":"Help",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          },
          "Logout":{
             "_baseIconPath":"SAO/Icons/Logout",
-            "_activeIconPath":"SAO/Icons/Logout_on"
-         }
-      }
-   },
-   "Misc":{
-      "FriendChildren":{
-         "Message Box":{
-            "_baseIconPath":"SAO/Icons/Message Box",
-            "_activeIconPath":"SAO/Icons/Message Box_on"
-         },
-         "Position Check":{
-            "_baseIconPath":"SAO/Icons/Position Check",
-            "_activeIconPath":"SAO/Icons/Position Check_on"
-         },
-         "Profile":{
-            "_baseIconPath":"SAO/Icons/Profile",
-            "_activeIconPath":"SAO/Icons/Profile_on"
-         }
-      },
-      "ItemChildren":{
-         "Start":{
-            "_baseIconPath":"SAO/Icons/Start",
-            "_activeIconPath":"SAO/Icons/Start_on"
-         },
-         "Minus":{
-            "_baseIconPath":"SAO/Icons/Minus",
-            "_activeIconPath":"SAO/Icons/Minus_on"
-         },
-         "Dissolve":{
-            "_baseIconPath":"SAO/Icons/Dissolve_on",
-            "_activeIconPath":"SAO/Icons/Dissolve_on"
+            "_activeIconPath":"SAO/Icons/Logout_on",
+            "_text":"Logout",
+            "_hasChildren":false,
+            "_itemShape":"rectangle"
          }
       }
    }
