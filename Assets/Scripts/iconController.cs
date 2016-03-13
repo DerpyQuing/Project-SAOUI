@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class iconController : MonoBehaviour {
+public class IconController : MonoBehaviour {
 	
 	private SpriteRenderer spriteRenderer;
 

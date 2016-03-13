@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class textController : MonoBehaviour {
+public class TextController : MonoBehaviour {
 
 	private TextMesh textMesh;
 	private MeshRenderer meshRenderer;

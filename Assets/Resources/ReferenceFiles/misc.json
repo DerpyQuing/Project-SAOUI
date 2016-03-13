@@ -1,0 +1,51 @@
+{
+   "itemChildren":{
+      "Start":{
+                     "_baseIconPath":"SAO/Icons/Start",
+                     "_activeIconPath":"SAO/Icons/Start_on",
+                     "_name":"Start",
+                     "_hasChildren":false,
+                     "_itemShape":"circle",
+                     "_type":"small"
+                  },
+                  "Minus":{
+                     "_baseIconPath":"SAO/Icons/Minus",
+                     "_activeIconPath":"SAO/Icons/Minus_on",
+                     "_name":"Minus",
+                     "_hasChildren":false,
+                     "_itemShape":"circle",
+                     "_type":"small"
+                  },
+                  "Dissolve":{
+                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_activeIconPath":"SAO/Icons/Dissolve_on",
+                     "_name":"Dissolve",
+                     "_hasChildren":false,
+                     "_itemShape":"circle",
+                     "_type":"small"
+                  }
+   },
+   "friendChildren":{
+      "Message Box":{
+         "_baseIconPath":"SAO/Icons/Message Box",
+         "_activeIconPath":"SAO/Icons/Message Box_on",
+         "_text":"Message Box",
+         "_hasChildren":false,
+         "_itemShape":"rectangle"
+      },
+      "Position Check":{
+         "_baseIconPath":"SAO/Icons/Position Check",
+         "_activeIconPath":"SAO/Icons/Position Check_on",
+         "_text":"Position Check",
+         "_hasChildren":false,
+         "_itemShape":"rectangle"
+      },
+      "Profile":{
+         "_baseIconPath":"SAO/Icons/Profile",
+         "_activeIconPath":"SAO/Icons/Profile_on",
+         "_text":"Profile",
+         "_hasChildren":false,
+         "_itemShape":"rectangle"
+      }
+   }
+}

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-public class collisionController : MonoBehaviour {
+public class CollisionController : MonoBehaviour {
 	
 	private bool allowTouch = false;
 	private bool isHover;
