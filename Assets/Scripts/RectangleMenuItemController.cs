@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using SimpleJSON;
+
+
 
 public class RectangleMenuItemController : MenuItemController {
 
@@ -9,6 +12,10 @@ public class RectangleMenuItemController : MenuItemController {
 
 	public GameObject subIconObject;
 	public IconController subIconController;
+
+	public string rectangleIconBasePath = "SAO/Icons/listObj";
+
+	public Vector3 menuItemScale = new Vector3(.06f, .06f, .06f);
 	
 
 	public Vector3 hoverBoxCenter = new Vector3(0.09f, 0, -.1f);
@@ -19,15 +26,21 @@ public class RectangleMenuItemController : MenuItemController {
 
 	public Vector3 boxScale = new Vector3(1f, 1f, 1f);
 
-	public RectangleMenuItemController(JSONNode jsonNode, GameObject menuItem) {
-		betterMethodName(jsonNode, menuItem);
-	}
+	public Vector3 subIconPosition = new Vector3(-.477f, 0, 0);
+	public Vector3 subIconScale = new Vector3(.015f, .015f, .015f);
 
-	// Or this
+
+	// Apparently
+
+	
 	public void giveData(JSONNode jsonNode, GameObject menuItem) {
 		this.jsonNode = jsonNode;
 		this.menuItem = menuItem;
 		betterMethodName(jsonNode, menuItem);
+
+		subIconObject = transform.FindChild("icon").gameObject;
+		textObject = transform.FindChild("text").gameObject;
+
 	}
 
 	public void handleCreation() {
@@ -36,6 +49,11 @@ public class RectangleMenuItemController : MenuItemController {
 		handleIcon();
 		handleSubIcon();
 		handleText();
+
+		transform.localScale = menuItemScale;
+
+		setItemParent();
+
 	}
 
 	public void handleBoxColliderSimilarities (CollisionController colController) {
@@ -43,8 +61,7 @@ public class RectangleMenuItemController : MenuItemController {
 		colController.ColliderScale = boxScale;
 		colController.ColliderIsTrigger = true;
 	}
-
-
+	
 	public void handleHover() {
 		handleBoxColliderSimilarities(hoverController);
 		hoverController.IsHover = true;
@@ -60,7 +77,22 @@ public class RectangleMenuItemController : MenuItemController {
 	}
 
 	public void handleIcon() {
-		iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+		iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath);
+	}
+
+	public void handleSubIcon() {
+		subIconController = subIconObject.GetComponent<IconController>();
+		subIconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+		subIconController.SpritePosition = subIconPosition;
+		subIconController.SpriteScale = subIconScale;
+	}
+
+	public void handleText() {
+
+	}
+
+	void Start() {
+
 	}
 	
 }

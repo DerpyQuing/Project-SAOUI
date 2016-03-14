@@ -81,5 +81,9 @@ public class TextController : MonoBehaviour {
 	}
 
 	#endregion
+
+	void Start() {
+
+	}
 	
 }

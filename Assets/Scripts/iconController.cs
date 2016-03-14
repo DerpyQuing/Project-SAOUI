@@ -62,6 +62,8 @@ public class IconController : MonoBehaviour {
 	}
 	#endregion
 	
-
+	void Start() {
+		
+	}
 	
 }

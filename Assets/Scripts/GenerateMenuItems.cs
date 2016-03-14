@@ -4,7 +4,7 @@ using SimpleJSON;
 using System.Collections.Generic;
 using System;
 
-public class Test : MonoBehaviour {
+public class GenerateMenuItems : MonoBehaviour {
 
 	// This region contains all of the different types of menu items we want to create
 	#region Types of Menu Items  
@@ -62,7 +62,7 @@ public class Test : MonoBehaviour {
 
 		// Instantiate an instace of the Menu Item Prefab we want. (Based of the "_itemShape" value)
 		// Set the position of this Menu Item at (0, -10f, 0) so its out of site (This can be adjusted)
-		GameObject menuItem = (GameObject) Instantiate(menuItemPrefabContainer[jsonNode["_itemShape"]], new Vector3(0f, -10f, 0f), Quaternion.identity);
+		GameObject menuItem = (GameObject) Instantiate(menuItemPrefabContainer[jsonNode["_itemShape"]], new Vector3(0f, 2f, 0f), Quaternion.identity);
 
 		// If there are a lot of similarities when assigning values and stuff to the prefab, put them here. No need for code duplication
 
@@ -95,8 +95,10 @@ public class Test : MonoBehaviour {
 
 	// The return for this method has no meaning to us. See above if curious
 	public bool createRectangleTestItem(JSONNode jsonNode, GameObject menuItem) {
-		RectangleMenuItemController cmic = menuItem.GetComponent<RectangleMenuItemController>();
-		cmic.giveData(jsonNode, menuItem);
+		RectangleMenuItemController rmic = menuItem.GetComponent<RectangleMenuItemController>();
+		rmic.giveData(jsonNode, menuItem);
+		rmic.handleCreation();
+
 		return true;
 	}
 

@@ -138,4 +138,5 @@ public class CollisionController : MonoBehaviour {
 		yield return new WaitForSeconds (seconds);
 		allowTouch = true;
 	}
+	
 }
