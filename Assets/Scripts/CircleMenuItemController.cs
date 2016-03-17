@@ -18,9 +18,7 @@ public class CircleMenuItemController : MenuItemController {
 	// Menu Item's scale
 	public Dictionary<string, Vector3> scaleContainer = new Dictionary<string, Vector3>() {
 		{"large", new Vector3(.003f, .003f, .003f)},
-		{"small", new Vector3(.003f, .003f, .003f)},
-
-		{"maybeSmall", new Vector3(30f, 30f, 30f)}
+		{"small", new Vector3(0.0008f, 0.0008f, 0.0008f)},
 	};
 
 	// This allows us to clense ourselves of unnecessary if statements
@@ -46,6 +44,15 @@ public class CircleMenuItemController : MenuItemController {
 		{"small", .35f}
 	};
 
+	public Dictionary<string, float> yPositionContainer = new Dictionary<string, float>() {
+		{"large", .075f},
+		{"small", 0f}
+	};
+
+	// Small icons positions (Start, Minus, Dissolve)
+	Vector3[] smallIconLocations = new Vector3[]{new Vector3(-0.0224f, 0, 0), new Vector3( 0.006f, 0, 0), new Vector3( 0.0327f, 0, 0)};
+
+
 	// Calling this gets things started
 	public void giveData(JSONNode jsonNode, GameObject menuItem) {
 		base.jsonNode = jsonNode;
@@ -57,10 +64,7 @@ public class CircleMenuItemController : MenuItemController {
 		handleHover();
 		handlePress();
 		handleIcon();
-
-		transform.localScale = scaleContainer[jsonNode["_type"]];
-
-		setItemParent();
+		handleTransform();
 
 	}
 	
@@ -87,13 +91,29 @@ public class CircleMenuItemController : MenuItemController {
 		handleCircleColliderSimilarities(pressController);
 		pressController.IsHover = false;
 
-
 		pressController.ColliderHeight = pressHeight;
 		pressController.ColliderRadius = pressRadiusContainer[jsonNode["_type"]];
 	}
 
 	public void handleIcon() {
 		iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+	}
+
+	public void handleTransform() {
+		setItemParent();
+		transform.localScale = scaleContainer[jsonNode["_type"]];
+
+		handlePosition();
+		//		transform.localRotation = rotation;
+
+	}
+
+	public void handlePosition() {
+		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
+			transform.localPosition = smallIconLocations[getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
+		} else {
+			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"]), transform.localPosition.z);
+		}
 	}
 
 	void Start() {

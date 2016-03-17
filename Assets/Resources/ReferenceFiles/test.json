@@ -11,13 +11,17 @@
             "_baseIconPath":"SAO/Icons/Equipment",
             "_activeIconPath":"SAO/Icons/Equipment_on",
             "_name":"Equipment",
+            "_text":"Equipment",
             "_hasChildren":true,
             "_itemShape":"rectangle",
             "_parent":"Player",
+            "_childrenAreList":false,
             "Weapons":{
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
                "_name":"Weapons",
+               "_text":"Weapons",
+               "_childrenAreList":true,
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Equipment",
@@ -28,6 +32,7 @@
                   "_hasChildren":true,
                   "_itemShape":"rectangle",
                   "_parent":"Weapons",
+                  "_childrenAreList":false,
                   "Start":{
                      "_baseIconPath":"SAO/Icons/Start",
                      "_activeIconPath":"SAO/Icons/Start_on",
@@ -47,7 +52,7 @@
                      "_parent":"Simple Sword"
                   },
                   "Dissolve":{
-                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_baseIconPath":"SAO/Icons/Dissolve",
                      "_activeIconPath":"SAO/Icons/Dissolve_on",
                      "_name":"Dissolve",
                      "_hasChildren":false,
@@ -63,6 +68,7 @@
                   "_hasChildren":true,
                   "_itemShape":"rectangle",
                   "_parent":"Weapons",
+                  "_childrenAreList":false,
                   "Start":{
                      "_baseIconPath":"SAO/Icons/Start",
                      "_activeIconPath":"SAO/Icons/Start_on",
@@ -82,7 +88,7 @@
                      "_parent":"Simple Shield"
                   },
                   "Dissolve":{
-                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_baseIconPath":"SAO/Icons/Dissolve",
                      "_activeIconPath":"SAO/Icons/Dissolve_on",
                      "_name":"Dissolve",
                      "_hasChildren":false,
@@ -96,16 +102,19 @@
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
                "_name":"Armor",
+               "_text":"Armor",
+               "_childrenAreList":true,
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Equipment",
-               "Cloak of Midnight":{
+               "Coat of Midnight":{
                   "_baseIconPath":"SAO/Icons/Help",
                   "_activeIconPath":"SAO/Icons/Help_on",
-                  "_text":"Cloak of Midnight",
+                  "_text":"Coat of Midnight",
                   "_hasChildren":true,
                   "_itemShape":"rectangle",
                   "_parent":"Armor",
+                  "_childrenAreList":false,
                   "Start":{
                      "_baseIconPath":"SAO/Icons/Start",
                      "_activeIconPath":"SAO/Icons/Start_on",
@@ -113,7 +122,7 @@
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Cloak of Midnight"
+                     "_parent":"Coat of Midnight"
                   },
                   "Minus":{
                      "_baseIconPath":"SAO/Icons/Minus",
@@ -122,16 +131,16 @@
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Cloak of Midnight"
+                     "_parent":"Coat of Midnight"
                   },
                   "Dissolve":{
-                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_baseIconPath":"SAO/Icons/Dissolve",
                      "_activeIconPath":"SAO/Icons/Dissolve_on",
                      "_name":"Dissolve",
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Cloak of Midnight"
+                     "_parent":"Coat of Midnight"
                   }
                }
             },
@@ -139,6 +148,8 @@
                "_baseIconPath":"SAO/Icons/Help",
                "_activeIconPath":"SAO/Icons/Help_on",
                "_name":"Accessory",
+               "_text":"Accessory",
+               "_childrenAreList":true,
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Equipment",
@@ -149,6 +160,7 @@
                   "_hasChildren":true,
                   "_itemShape":"rectangle",
                   "_parent":"Accessory",
+                  "_childrenAreList":false,
                   "Start":{
                      "_baseIconPath":"SAO/Icons/Start",
                      "_activeIconPath":"SAO/Icons/Start_on",
@@ -156,7 +168,7 @@
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Start"
+                     "_parent":"Ring of Strength"
                   },
                   "Minus":{
                      "_baseIconPath":"SAO/Icons/Minus",
@@ -165,16 +177,16 @@
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Minus"
+                     "_parent":"Ring of Strength"
                   },
                   "Dissolve":{
-                     "_baseIconPath":"SAO/Icons/Dissolve_on",
+                     "_baseIconPath":"SAO/Icons/Dissolve",
                      "_activeIconPath":"SAO/Icons/Dissolve_on",
                      "_name":"Dissolve",
                      "_hasChildren":false,
                      "_itemShape":"circle",
                      "_type":"small",
-                     "_parent":"Dissolve"
+                     "_parent":"Ring of Strength"
                   }
                }
             }
@@ -183,6 +195,8 @@
             "_baseIconPath":"SAO/Icons/Items",
             "_activeIconPath":"SAO/Icons/Items_on",
             "_name":"Items",
+            "_text":"Items",
+            "_childrenAreList":true,
             "_hasChildren":true,
             "_itemShape":"rectangle",
             "_parent":"Player",
@@ -193,6 +207,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -212,7 +227,7 @@
                   "_parent":"Space Rifle"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -228,6 +243,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -247,7 +263,7 @@
                   "_parent":"M4-A1"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -263,6 +279,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -282,7 +299,7 @@
                   "_parent":"Kagemitsu"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -298,6 +315,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -317,7 +335,7 @@
                   "_parent":"Portal Gun"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -333,6 +351,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -352,7 +371,7 @@
                   "_parent":"Elucidator"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -368,6 +387,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -387,7 +407,7 @@
                   "_parent":"MP7"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -403,6 +423,7 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Items",
+               "_childrenAreList":false,
                "Start":{
                   "_baseIconPath":"SAO/Icons/Start",
                   "_activeIconPath":"SAO/Icons/Start_on",
@@ -422,7 +443,7 @@
                   "_parent":"Dark Repulser"
                },
                "Dissolve":{
-                  "_baseIconPath":"SAO/Icons/Dissolve_on",
+                  "_baseIconPath":"SAO/Icons/Dissolve",
                   "_activeIconPath":"SAO/Icons/Dissolve_on",
                   "_name":"Dissolve",
                   "_hasChildren":false,
@@ -436,6 +457,8 @@
             "_baseIconPath":"SAO/Icons/Skills",
             "_activeIconPath":"SAO/Icons/Skills_on",
             "_name":"Skills",
+            "_text":"Skills",
+            "_childrenAreList":true,
             "_hasChildren":true,
             "_itemShape":"rectangle",
             "_parent":"Player",
@@ -445,6 +468,7 @@
                "_text":"Battle Healing",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "Blade Throwing":{
@@ -453,6 +477,7 @@
                "_text":"Blade Throwing",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "Dual Blades":{
@@ -461,6 +486,7 @@
                "_text":"Dual Blades",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "One-Handed":{
@@ -469,6 +495,7 @@
                "_text":"One-Handed",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "Parrying":{
@@ -477,6 +504,7 @@
                "_text":"Parrying",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "Searching":{
@@ -485,6 +513,7 @@
                "_text":"Searching",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             },
             "Tracking":{
@@ -493,6 +522,7 @@
                "_text":"Tracking",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Skills"
             }
          }
@@ -510,6 +540,7 @@
             "_text":"Party",
             "_hasChildren":true,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Party_",
             "Create":{
                "_baseIconPath":"SAO/Icons/Create",
@@ -517,7 +548,8 @@
                "_text":"Create",
                "_hasChildren":false,
                "_itemShape":"rectangle",
-               "_parent":"Party_"
+               "_childrenAreList":false,
+               "_parent":"Party"
             },
             "Invite":{
                "_baseIconPath":"SAO/Icons/Invite",
@@ -525,6 +557,7 @@
                "_text":"Invite",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Party"
             },
             "Dissolve":{
@@ -533,15 +566,18 @@
                "_text":"Dissolve",
                "_hasChildren":false,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Party"
             }
          },
          "Friends":{
             "_baseIconPath":"SAO/Icons/Player__",
             "_activeIconPath":"SAO/Icons/Player___on",
+            "_name":"Friends",
             "_text":"Friends",
             "_hasChildren":true,
             "_itemShape":"rectangle",
+            "_childrenAreList":true,
             "_parent":"Party_",
             "Kirito":{
                "_baseIconPath":"SAO/Icons/Player__",
@@ -549,6 +585,7 @@
                "_text":"Kirito",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -556,6 +593,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Kirito"
                },
                "Position Check":{
@@ -564,6 +602,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Kirito"
                },
                "Profile":{
@@ -572,6 +611,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Kirito"
                }
             },
@@ -581,6 +621,7 @@
                "_text":"Asuna",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -588,6 +629,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Asuna"
                },
                "Position Check":{
@@ -596,6 +638,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Asuna"
                },
                "Profile":{
@@ -604,6 +647,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Asuna"
                }
             },
@@ -613,6 +657,7 @@
                "_text":"Sugu",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -620,6 +665,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Sugu"
                },
                "Position Check":{
@@ -628,6 +674,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Sugu"
                },
                "Profile":{
@@ -636,6 +683,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Sugu"
                }
             },
@@ -645,6 +693,7 @@
                "_text":"Klien",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -652,6 +701,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Klien"
                },
                "Position Check":{
@@ -660,6 +710,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Klien"
                },
                "Profile":{
@@ -668,6 +719,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Klien"
                }
             },
@@ -677,6 +729,7 @@
                "_text":"Lizbeth",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -684,6 +737,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Lizbeth"
                },
                "Position Check":{
@@ -692,6 +746,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Lizbeth"
                },
                "Profile":{
@@ -700,6 +755,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Lizbeth"
                }
             },
@@ -709,6 +765,7 @@
                "_text":"Max",
                "_hasChildren":true,
                "_itemShape":"rectangle",
+               "_childrenAreList":false,
                "_parent":"Friends",
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
@@ -716,6 +773,7 @@
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Max"
                },
                "Position Check":{
@@ -724,6 +782,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Max"
                },
                "Profile":{
@@ -732,6 +791,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Max"
                }
             },
@@ -742,12 +802,14 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Friends",
+               "_childrenAreList":false,
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
                   "_activeIconPath":"SAO/Icons/Message Box_on",
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Jack"
                },
                "Position Check":{
@@ -756,6 +818,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Jack"
                },
                "Profile":{
@@ -764,6 +827,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"Jack"
                }
             },
@@ -774,12 +838,14 @@
                "_hasChildren":true,
                "_itemShape":"rectangle",
                "_parent":"Friends",
+               "_childrenAreList":false,
                "Message Box":{
                   "_baseIconPath":"SAO/Icons/Message Box",
                   "_activeIconPath":"SAO/Icons/Message Box_on",
                   "_text":"Message Box",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"James"
                },
                "Position Check":{
@@ -788,6 +854,7 @@
                   "_text":"Position Check",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"James"
                },
                "Profile":{
@@ -796,6 +863,7 @@
                   "_text":"Profile",
                   "_hasChildren":false,
                   "_itemShape":"rectangle",
+                  "_childrenAreList":false,
                   "_parent":"James"
                }
             }
@@ -806,6 +874,7 @@
             "_text":"Guild",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Party_"
          }
       },
@@ -822,6 +891,7 @@
             "_text":"Befriend",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Message"
          },
          "Trade":{
@@ -830,6 +900,7 @@
             "_text":"Trade",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Message"
          },
          "Duel":{
@@ -838,6 +909,7 @@
             "_text":"Duel",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Message"
          },
          "Marriage":{
@@ -846,6 +918,7 @@
             "_text":"Marriage",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Message"
          }
       },
@@ -862,6 +935,7 @@
             "_text":"Field Map",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Location"
          },
          "Dungeon Map":{
@@ -870,6 +944,7 @@
             "_text":"Dungeon Map",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Location"
          },
          "Quests":{
@@ -878,6 +953,7 @@
             "_text":"Quests",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Location"
          }
       },
@@ -894,6 +970,7 @@
             "_text":"Options",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Settings"
          },
          "Help":{
@@ -902,6 +979,7 @@
             "_text":"Help",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Settings"
          },
          "Logout":{
@@ -910,6 +988,7 @@
             "_text":"Logout",
             "_hasChildren":false,
             "_itemShape":"rectangle",
+            "_childrenAreList":false,
             "_parent":"Settings"
          }
       }

@@ -9,6 +9,8 @@ public class IconController : MonoBehaviour {
 	private string spritePath;
 	private int sortingOrder;
 
+	private Color spriteColor;
+
 	private Vector3 spritePosition;
 	private Vector3 spriteScale;
 	
@@ -58,6 +60,14 @@ public class IconController : MonoBehaviour {
 		set {
 			sortingOrder = value;
 			spriteRenderer.sortingOrder = value;
+		}
+	}
+
+	public Color SpriteColor {
+		get { return spriteColor; }
+		set {
+			spriteColor = value;
+			spriteRenderer.color = value;
 		}
 	}
 	#endregion
