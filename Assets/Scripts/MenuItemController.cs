@@ -19,7 +19,6 @@ public class MenuItemController : MonoBehaviour {
 	public float unfocusedAlpha = .688f;
 	public float baseAlpha = 1f;
 
-
 	public int iconSortingOrder = 100;
 
 	public MenuItemController() {
@@ -32,8 +31,8 @@ public class MenuItemController : MonoBehaviour {
 
 	// Come up with a better method name
 	public void betterMethodName(JSONNode jsonNode, GameObject menuItem) {
-		jsonNode = jsonNode;
-		menuItem = menuItem;
+		this.jsonNode = jsonNode;
+		this.menuItem = menuItem;
 
 
 		hoverObject = menuItem.transform.FindChild("hover").gameObject;
@@ -64,7 +63,7 @@ public class MenuItemController : MonoBehaviour {
 		iconController.SpriteColor = new Color(255f, 255f, 255f, newAlpha);
 	}
 
-	public int getMyGroupIndex(string parentName, string myName) {
+	public float getMyGroupIndex(string parentName, string myName) {
 		Transform parentTransform = null;
 		if(parentName != null) {
 			parentTransform = GameObject.Find(parentName).transform.Find("childContainer");
@@ -77,6 +76,10 @@ public class MenuItemController : MonoBehaviour {
 		}
 		return -1;
 	}
+
+    public Transform getParentTransform(string parent) {
+        return GameObject.Find(parent).transform.Find("childContainer").transform;
+    }
 
 
 }

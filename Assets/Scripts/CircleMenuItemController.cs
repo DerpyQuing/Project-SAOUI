@@ -110,7 +110,7 @@ public class CircleMenuItemController : MenuItemController {
 
 	public void handlePosition() {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
-			transform.localPosition = smallIconLocations[getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
+			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
 		} else {
 			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"]), transform.localPosition.z);
 		}

@@ -2,8 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using SimpleJSON;
-
-
+using System;
 
 public class RectangleMenuItemController : MenuItemController {
 
@@ -39,11 +38,11 @@ public class RectangleMenuItemController : MenuItemController {
 	public Font    textFont = Resources.Load<Font>("SAO/Fonts/TTF/SAOUITTF-Regular");
 
 	// Misc
-	public float yOffset = 0.0261f;
+	public static float yOffset = 0.0261f;
 	public bool  childrenAreList;
+    public static float xOffset = 0.1187f;
 
-	
-	public void giveData(JSONNode jsonNode, GameObject menuItem) {
+    public void giveData(JSONNode jsonNode, GameObject menuItem) {
 		this.jsonNode = jsonNode;
 		this.menuItem = menuItem;
 		betterMethodName(jsonNode, menuItem);
@@ -59,7 +58,7 @@ public class RectangleMenuItemController : MenuItemController {
 		handleIcon();
 		handleSubIcon();
 		handleText();
-		handleTransform();
+        StartCoroutine(waitForTransform());// handleTransform();
 		handleMisc();
 	}
 
@@ -105,19 +104,45 @@ public class RectangleMenuItemController : MenuItemController {
 	}
 
 	public void handleTransform() {
-		setItemParent();
-		transform.localScale = menuItemScale;
-		transform.position = GameObject.Find(jsonNode["_parent"]).transform.position;
-		//transform.localRotation = rotation;
+        if (getParentTransform(jsonNode["_parent"]).childCount % 2 == 0) { // fix
+            Debug.Log(jsonNode["_text"] + " + " + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2);
+            transform.localPosition = new Vector3(xOffset, (-yOffset / 2) + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2 - yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"]) , 0f);
+        }
+        else {
+            float calc1 = getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"]) * 2 + 1;
+            float calc2 = getParentTransform(jsonNode["_parent"]).childCount;
+           
+            /*
+            if (calc1 == calc2)
+                Debug.Log(jsonNode["_text"] + " --> Middle");
+            else if (calc1 < calc2)
+               Debug.Log(jsonNode["_text"] + " --> Above");
+            else if (calc1 > calc2)
+                Debug.Log(jsonNode["_text"] + " --> Below");
+            */
+
+            transform.localPosition = new Vector3(xOffset, yOffset * (getParentTransform(jsonNode["_parent"]).childCount / 2) - (yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"])), 0f);
+        }
+        
+		//transform.localRotation = rotation; // will handle this when I get to curvature
 	}
 
 	public void handleMisc() {
-		if(jsonNode["_childrenAreList"] != null)
+        setItemParent();
+        transform.localScale = menuItemScale;
+        if (jsonNode["_childrenAreList"] != null)
 			childrenAreList = jsonNode["_childrenAreList"].AsBool;
 	}
 
 	void Start() {
 
 	}
-	
+    
+    IEnumerator waitForTransform()
+    {
+        yield return new WaitForSeconds(5);
+        handleTransform();
+    }
+    
+    	
 }
