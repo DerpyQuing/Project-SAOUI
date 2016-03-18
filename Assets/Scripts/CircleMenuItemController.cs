@@ -17,7 +17,7 @@ public class CircleMenuItemController : MenuItemController {
 
 	// Menu Item's scale
 	public Dictionary<string, Vector3> scaleContainer = new Dictionary<string, Vector3>() {
-		{"large", new Vector3(.003f, .003f, .003f)},
+		{"large", new Vector3(.0025f, .0025f, .0025f)},
 		{"small", new Vector3(0.0008f, 0.0008f, 0.0008f)},
 	};
 
@@ -111,13 +111,12 @@ public class CircleMenuItemController : MenuItemController {
 	public void handlePosition() {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
 			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
-		} else {
-			transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"]), transform.localPosition.z);
+		} else { //																																					hard for now
+			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , jsonNode["_name"]) - .17f, 0.41f);
 		}
 	}
 
 	void Start() {
-
 	}
 
 

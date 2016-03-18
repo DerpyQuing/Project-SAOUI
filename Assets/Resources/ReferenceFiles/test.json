@@ -930,8 +930,8 @@
          "_itemShape":"circle",
          "_type":"large",
          "Field Map":{
-            "_baseIconPath":"SAO/Icons/Field Map",
-            "_activeIconPath":"SAO/Icons/Field Map_on",
+            "_baseIconPath":"SAO/Icons/Floor Map",
+            "_activeIconPath":"SAO/Icons/Floor Map_on",
             "_text":"Field Map",
             "_hasChildren":false,
             "_itemShape":"rectangle",

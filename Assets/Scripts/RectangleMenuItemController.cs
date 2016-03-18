@@ -21,6 +21,7 @@ public class RectangleMenuItemController : MenuItemController {
 	public Vector3 pressBoxCenter = new Vector3(0.09f, 0, 0);
 	public Vector3 pressBoxSize = new Vector3(1.6f, .45f, .1f);
 	public Vector3 boxScale = new Vector3(1f, 1f, 1f);
+	public int sortingOrder = -1;
 
 	// Sub Icon
 	public Vector3 subIconPosition = new Vector3(-.477f, 0, 0);
@@ -128,6 +129,7 @@ public class RectangleMenuItemController : MenuItemController {
 	}
 
 	public void handleMisc() {
+		iconController.SortingOrder = sortingOrder;
         setItemParent();
         transform.localScale = menuItemScale;
         if (jsonNode["_childrenAreList"] != null)
