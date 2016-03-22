@@ -61,8 +61,8 @@ public class CircleMenuItemController : MenuItemController {
 	}
 
 	public void handleCreation() {
-		handleHover();
-		handlePress();
+		handleHoverInit();
+		handlePressInit();
 		handleIcon();
 		handleTransform();
 
@@ -74,23 +74,22 @@ public class CircleMenuItemController : MenuItemController {
 		colController.ColliderDirection = direction;
 		colController.ColliderIsTrigger = true;
 		colController.ColliderScale = colScale;
+		colController.setupInterfaces(this, this);
 	}
 
 	// Handles hover 
-	public void handleHover() {
+	public void handleHoverInit() {
 		handleCircleColliderSimilarities(hoverController);
 		hoverController.IsHover = true;
-
 		hoverController.ColliderHeight = hoverHeightContainer[jsonNode["_type"]];
 		hoverController.ColliderRadius = hoverRadiusContainer[jsonNode["_type"]];
 		hoverController.ColliderCenter = hoverCenterContainer[jsonNode["_type"]];
 	}
 
 	// Handles press
-	public void handlePress() {
+	public void handlePressInit() {
 		handleCircleColliderSimilarities(pressController);
 		pressController.IsHover = false;
-
 		pressController.ColliderHeight = pressHeight;
 		pressController.ColliderRadius = pressRadiusContainer[jsonNode["_type"]];
 	}
@@ -102,7 +101,6 @@ public class CircleMenuItemController : MenuItemController {
 	public void handleTransform() {
 		setItemParent();
 		transform.localScale = scaleContainer[jsonNode["_type"]];
-
 		handlePosition();
 		//		transform.localRotation = rotation;
 
@@ -111,9 +109,26 @@ public class CircleMenuItemController : MenuItemController {
 	public void handlePosition() {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
 			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
-		} else { //																																					hard for now
+		} else {
 			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , jsonNode["_name"]) - .17f, 0.41f);
 		}
+	}
+
+	public override void handleHover () {
+		iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
+		Debug.Log("hov");
+	}
+	
+	public override void handlePress() {
+		Debug.Log("pres");
+	}
+
+	public override void handleHoverLoss () {
+		Debug.Log("hov loz");
+	}
+	
+	public override void handlePressLoss () {
+		Debug.Log("pres loz");
 	}
 
 	void Start() {

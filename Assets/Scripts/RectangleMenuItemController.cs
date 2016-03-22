@@ -54,8 +54,8 @@ public class RectangleMenuItemController : MenuItemController {
 	}
 
 	public void handleCreation() {
-		handleHover();
-		handlePress();
+		handleHoverInit();
+		handlePressInit();
 		handleIcon();
 		handleSubIcon();
 		handleText();
@@ -67,16 +67,17 @@ public class RectangleMenuItemController : MenuItemController {
 		colController.initBoxCollider();
 		colController.ColliderScale = boxScale;
 		colController.ColliderIsTrigger = true;
+		colController.setupInterfaces(this, this);
 	}
 	
-	public void handleHover() {
+	public void handleHoverInit() {
 		handleBoxColliderSimilarities(hoverController);
 		hoverController.IsHover = true;
 		hoverController.ColliderCenter = hoverBoxCenter;
 		hoverController.ColliderSize = hoverBoxSize;
 	}
 
-	public void handlePress() {
+	public void handlePressInit() {
 		handleBoxColliderSimilarities(pressController);
 		pressController.IsHover = false;
 		pressController.ColliderCenter = pressBoxCenter;
@@ -105,25 +106,11 @@ public class RectangleMenuItemController : MenuItemController {
 	}
 
 	public void handleTransform() {
-        if (getParentTransform(jsonNode["_parent"]).childCount % 2 == 0) { // fix
-            Debug.Log(jsonNode["_text"] + " + " + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2);
+        if (getParentTransform(jsonNode["_parent"]).childCount % 2 == 0) 
             transform.localPosition = new Vector3(xOffset, (-yOffset / 2) + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2 - yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"]) , 0f);
-        }
-        else {
-            float calc1 = getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"]) * 2 + 1;
-            float calc2 = getParentTransform(jsonNode["_parent"]).childCount;
-           
-            /*
-            if (calc1 == calc2)
-                Debug.Log(jsonNode["_text"] + " --> Middle");
-            else if (calc1 < calc2)
-               Debug.Log(jsonNode["_text"] + " --> Above");
-            else if (calc1 > calc2)
-                Debug.Log(jsonNode["_text"] + " --> Below");
-            */
-
+        else 
             transform.localPosition = new Vector3(xOffset, yOffset * (getParentTransform(jsonNode["_parent"]).childCount / 2) - (yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"])), 0f);
-        }
+        
         
 		//transform.localRotation = rotation; // will handle this when I get to curvature
 	}
@@ -136,13 +123,35 @@ public class RectangleMenuItemController : MenuItemController {
 			childrenAreList = jsonNode["_childrenAreList"].AsBool;
 	}
 
+
+	public override void handleHover () {
+		Debug.Log("hov111");
+	}
+	
+	public override void handlePress() {
+		Debug.Log("pres111");
+	}
+	
+	public override void handleHoverLoss () {
+		Debug.Log("hov loz111");
+	}
+	
+	public override void handlePressLoss () {
+		Debug.Log("pres loz111");
+	}
+
+
 	void Start() {
 
 	}
     
+
+
+
+
     IEnumerator waitForTransform()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         handleTransform();
     }
     

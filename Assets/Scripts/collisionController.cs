@@ -23,19 +23,41 @@ public class CollisionController : MonoBehaviour {
 
 	private Vector3 colliderSize;
 
+	/*
+	private Transform parent;
+	private RectangleMenuItemController rectangleMenuItemController;
+	private CircleMenuItemController circleMenuItemController;
+	*/
+
+	private IHover iHover;
+	private IPress iPress;
+	
 	void Start () {
 		StartCoroutine(wait(2));
 	}
 
+	public void setupInterfaces(IHover iHover, IPress iPress) {
+		this.iHover = iHover;
+		this.iPress = iPress;
+	}
+
 	public void initCapsuleCollider() {
 		capsuleCollider = GetComponent<CapsuleCollider>();
+		//circleMenuItemController = parent.GetComponent<CircleMenuItemController>();
 	}
 
 	public void initBoxCollider() {
 		boxCollider = GetComponent<BoxCollider>();
+		//rectangleMenuItemController = parent.GetComponent<RectangleMenuItemController>();
 	}
 	
 	#region Setters and Getters    
+	/*public Transform Parent {
+		get { return parent; }
+		set { parent = value; }
+	}*/
+	
+
 	public Vector3 ColliderPosition {
 		get { return colliderPosition; }
 		set { 
@@ -120,18 +142,17 @@ public class CollisionController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.name == "bone3" && allowTouch)
 			if(isHover)
-				Debug.Log("Hover");
+				iHover.handleHover();
 			else 
-				Debug.Log("Press");
-		
+				iPress.handlePress();
 	}
 	
 	void OnTriggerExit(Collider other) {
 		if (other.name == "bone3" && allowTouch)
 			if(isHover)
-				Debug.Log("Hover Loss");
+				iHover.handleHoverLoss();
 			else 
-				Debug.Log("Press Loss");
+				iPress.handlePressLoss();
 	}
 	
 	public IEnumerator wait(int seconds) {

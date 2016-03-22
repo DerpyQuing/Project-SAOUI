@@ -2,7 +2,7 @@
 using System.Collections;
 using SimpleJSON;
 
-public class MenuItemController : MonoBehaviour {
+public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public JSONNode jsonNode;
 
@@ -21,6 +21,37 @@ public class MenuItemController : MonoBehaviour {
 
 	public int iconSortingOrder = 100;
 
+	public bool hoverStatus = false;
+	public bool pressStatus = false;
+	public bool selectedStatus = false;
+
+
+	public bool Hover {
+		get { return hoverStatus; }
+		set {
+			hoverStatus = value;
+			if(hoverStatus) 
+				handleHover();
+			else
+				handleHoverLoss();
+		}
+	}
+
+	public bool Press {
+		get { return pressStatus; }
+		set { 
+			if(hoverStatus && value) {
+				pressStatus = value;
+				handlePress();
+			}
+		}
+	}
+
+	public bool Selected {
+		get { return selectedStatus; }
+		set { selectedStatus = value; }
+	}
+	
 	public MenuItemController() {
 		//Debug.Log("Don't think I need this");
 	}
@@ -49,6 +80,7 @@ public class MenuItemController : MonoBehaviour {
 		if(jsonNode["_parent"] != null) {
 			if(GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer") == null) {
 				GameObject childContainer = new GameObject("childContainer");
+				childContainer.AddComponent<ChildController>();
 				childContainer.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform);
 				childContainer.transform.localPosition = Vector3.zero;
 			}
@@ -80,6 +112,12 @@ public class MenuItemController : MonoBehaviour {
     public Transform getParentTransform(string parent) {
         return GameObject.Find(parent).transform.Find("childContainer").transform;
     }
+
+	// We'll override these in the children
+	public virtual void handleHover () {Debug.Log("Mistake");}
+	public virtual void handleHoverLoss() {}
+	public virtual void handlePress() {}
+	public virtual void handlePressLoss() {}
 
 
 }
