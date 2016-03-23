@@ -8,6 +8,8 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public GameObject menuItem;
 
+	public ChildController childController;
+
 	public GameObject hoverObject;
 	public CollisionController hoverController;
 
@@ -28,23 +30,12 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public bool Hover {
 		get { return hoverStatus; }
-		set {
-			hoverStatus = value;
-			if(hoverStatus) 
-				handleHover();
-			else
-				handleHoverLoss();
-		}
+		set { hoverStatus = value; }
 	}
 
 	public bool Press {
 		get { return pressStatus; }
-		set { 
-			if(hoverStatus && value) {
-				pressStatus = value;
-				handlePress();
-			}
-		}
+		set { pressStatus = value; }
 	}
 
 	public bool Selected {
@@ -78,15 +69,16 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public void setItemParent() {
 		if(jsonNode["_parent"] != null) {
+			Debug.Log(GameObject.Find(jsonNode["_parent"]));
 			if(GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer") == null) {
 				GameObject childContainer = new GameObject("childContainer");
-				childContainer.AddComponent<ChildController>();
+				childController = childContainer.AddComponent<ChildController>();
 				childContainer.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform);
 				childContainer.transform.localPosition = Vector3.zero;
 			}
 			menuItem.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform.FindChild("childContainer").transform);
 		} else if(jsonNode["_parent"] == null) {
-			menuItem.transform.SetParent(GameObject.Find("TestObject").transform);
+			menuItem.transform.SetParent(GameObject.Find("MenuHolder").transform);
 		} else
 			Debug.Log("Parent Error");
 	}
@@ -100,7 +92,7 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 		if(parentName != null) {
 			parentTransform = GameObject.Find(parentName).transform.Find("childContainer");
 		} else {
-			parentTransform = GameObject.Find("TestObject").transform;
+			parentTransform = GameObject.Find("MenuHolder").transform;
 		}
 		for(int childIndex = 0; childIndex < parentTransform.childCount; childIndex++) {
 			if(parentTransform.GetChild(childIndex).name == myName)
@@ -114,7 +106,7 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
     }
 
 	// We'll override these in the children
-	public virtual void handleHover () {Debug.Log("Mistake");}
+	public virtual void handleHover () {}
 	public virtual void handleHoverLoss() {}
 	public virtual void handlePress() {}
 	public virtual void handlePressLoss() {}

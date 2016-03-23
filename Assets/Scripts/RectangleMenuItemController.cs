@@ -36,7 +36,7 @@ public class RectangleMenuItemController : MenuItemController {
 	public Color   textColorRaised = Color.white;
 	public Color   textColorFaded  = new Color(Color.gray.r, Color.gray.g, Color.gray.b, .588f);
 	public int     textSortingOrder = 102;
-	public Font    textFont = Resources.Load<Font>("SAO/Fonts/TTF/SAOUITTF-Regular");
+	public Font    textFont;
 
 	// Misc
 	public static float yOffset = 0.0261f;
@@ -50,6 +50,7 @@ public class RectangleMenuItemController : MenuItemController {
 
 		subIconObject = transform.FindChild("icon").gameObject;
 		textObject = transform.FindChild("text").gameObject;
+		textFont = Resources.Load<Font>("SAO/Fonts/SAOUI-Regular");
 
 	}
 
@@ -98,18 +99,18 @@ public class RectangleMenuItemController : MenuItemController {
 	public void handleText() {
 		textController = textObject.GetComponent<TextController>();
 		textController.Text = jsonNode["_text"];
-		textController.TextFont = textFont;
 		textController.TextColor = textColorNormal;
 		textController.TextSize = textSize;
+		textController.TextFont = textFont;
 		textController.TextScale = textScale;
 		textController.TextPosition = textPosition;
 	}
 
 	public void handleTransform() {
         if (getParentTransform(jsonNode["_parent"]).childCount % 2 == 0) 
-            transform.localPosition = new Vector3(xOffset, (-yOffset / 2) + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2 - yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"]) , 0f);
+            transform.localPosition = new Vector3(xOffset, (-yOffset / 2) + yOffset * getParentTransform(jsonNode["_parent"]).childCount / 2 - yOffset * getMyGroupIndex(jsonNode["_parent"], gameObject.name) , 0f);
         else 
-            transform.localPosition = new Vector3(xOffset, yOffset * (getParentTransform(jsonNode["_parent"]).childCount / 2) - (yOffset * getMyGroupIndex(jsonNode["_parent"], jsonNode["_text"])), 0f);
+            transform.localPosition = new Vector3(xOffset, yOffset * (getParentTransform(jsonNode["_parent"]).childCount / 2) - (yOffset * getMyGroupIndex(jsonNode["_parent"], gameObject.name)), 0f);
         
         
 		//transform.localRotation = rotation; // will handle this when I get to curvature

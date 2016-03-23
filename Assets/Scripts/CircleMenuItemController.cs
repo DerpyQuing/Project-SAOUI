@@ -108,27 +108,39 @@ public class CircleMenuItemController : MenuItemController {
 
 	public void handlePosition() {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
-			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], jsonNode["_name"])];
+			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], gameObject.name)];
 		} else {
-			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , jsonNode["_name"]) - .17f, 0.41f);
+			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.41f);
 		}
 	}
 
+
 	public override void handleHover () {
-		iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
-		Debug.Log("hov");
+		// If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
+		if(!childController.isAChildHovered() && !childController.isAChildPressed()) {
+			Hover = true;
+			iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
+		}
 	}
 	
 	public override void handlePress() {
-		Debug.Log("pres");
+		if(Hover && !childController.isAChildPressed()) { 
+			Press = true;
+			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
+		}
 	}
 
 	public override void handleHoverLoss () {
-		Debug.Log("hov loz");
+		iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+		Hover = false;
 	}
 	
 	public override void handlePressLoss () {
-		Debug.Log("pres loz");
+		Press = false;
+		if(Hover && !childController.isAChildPressed()) {
+			Selected = true;
+			// unhide the children
+		}
 	}
 
 	void Start() {

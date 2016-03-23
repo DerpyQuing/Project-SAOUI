@@ -12,6 +12,8 @@ public class GenerateMenuItems : MonoBehaviour {
 	public GameObject circleMenuItem;
 	#endregion
 
+	public JSONNode _jsonNode;
+	
 	// Container for the prefabs above
 	public Dictionary<string, GameObject> menuItemPrefabContainer = new Dictionary<string, GameObject>();
 
@@ -39,10 +41,12 @@ public class GenerateMenuItems : MonoBehaviour {
 		string menu = readFromFile.LoadJSONResourceFile("ReferenceFiles/test.json");
 
 		// Turn that string into a SimpleJSON JSONNode
-		JSONNode jsonNode = JSONNode.Parse(menu);
+		_jsonNode = JSONNode.Parse(menu);
 
 		// Use a recursive method to generate all of the Menu Items at start up
-		testRecursiveness(jsonNode["Menu"]);
+		testRecursiveness(_jsonNode["Menu"]);
+
+		StartCoroutine(hideAllItemsCorutine(_jsonNode["Menu"]));
 	}
 
 	// Recursion is "neat"
@@ -63,15 +67,22 @@ public class GenerateMenuItems : MonoBehaviour {
 		// Instantiate an instace of the Menu Item Prefab we want. (Based of the "_itemShape" value)
 		// Set the position of this Menu Item at (0, -10f, 0) so its out of site (This can be adjusted)
 		GameObject menuItem = (GameObject) Instantiate(menuItemPrefabContainer[jsonNode["_itemShape"]], new Vector3(0f, 2f, 0f), Quaternion.identity);
+		menuItem.tag = "MenuItem";
 
 		// If there are a lot of similarities when assigning values and stuff to the prefab, put them here. No need for code duplication
 
 		// Sets the name of the GameObject, just for visual help
-		if(jsonNode["_name"] != null) {
+		//if(jsonNode["_name"] != null) {
 			menuItem.name = jsonNode["_name"];
-		} else if(jsonNode["_text"] != null) {
-			menuItem.name = jsonNode["_text"];
+		//} else if(jsonNode["_text"] != null) {
+		//	menuItem.name = jsonNode["_text"];
+		//}
+
+
+		if(!jsonNode["_hasChildren"].AsBool) {
+			menuItem.name += "-" + jsonNode["_parent"];
 		}
+			
 
 		// Create the Menu Item (ie. Give it all its unique attributes)
 		menuItemCreationMethodContainer[jsonNode["_itemShape"]].DynamicInvoke(jsonNode, menuItem);
@@ -103,9 +114,49 @@ public class GenerateMenuItems : MonoBehaviour {
 	}
 
 	#endregion
+	
 
+	IEnumerator hideAllItemsCorutine(JSONNode jsonNode)
+	{
+		yield return new WaitForSeconds(6);
+		hideAllItems(jsonNode);
+	}
+	
+	// So we can't set them to inactive, have to deactivate all of their components. Dumb AF, not gonna lie
+	public void hideAllItems(JSONNode jsonNode) {
+		for(int i = 0; i < jsonNode.Count; i++) {
+			if(jsonNode[i]["_hasChildren"] != null) {
+				if(jsonNode[i]["_hasChildren"].AsBool) {
+					hideAllItems(jsonNode[i]); 
+				}
 
+				if(!jsonNode[i]["_hasChildren"].AsBool) 
+					hideItem(GameObject.Find(jsonNode[i]["_name"] + "-" + jsonNode[i]["_parent"]), jsonNode[i]["_itemShape"], jsonNode[i]);
+				else
+					hideItem(GameObject.Find(jsonNode[i]["_name"]), jsonNode[i]["_itemShape"], jsonNode[i]);
+				
+			}
+		}
+	}
 
+	public void hideItem(GameObject gameobject, string shape, JSONNode jsonNode) {
+		Debug.Log(jsonNode["_text"] + " + " + jsonNode["_name"]);
+		if(shape.Equals("rectangle")) {
+			foreach(BoxCollider boxCollider in gameobject.GetComponentsInChildren<BoxCollider>())
+				boxCollider.enabled = false;
+
+			foreach(SpriteRenderer spriteRenderer in gameobject.GetComponentsInChildren<SpriteRenderer>())
+				spriteRenderer.enabled = false;
+
+			gameobject.GetComponentInChildren<MeshRenderer>().enabled = false;
+
+		} else if(shape.Equals("circle")) {
+			foreach(CapsuleCollider capsuleCollider in gameobject.GetComponentsInChildren<CapsuleCollider>())
+				capsuleCollider.enabled = false;
+			gameobject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+		}
+
+	}
 
 
 
@@ -113,3 +164,12 @@ public class GenerateMenuItems : MonoBehaviour {
 
 
 }
+
+
+
+
+
+
+
+
+
