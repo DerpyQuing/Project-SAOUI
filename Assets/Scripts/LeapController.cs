@@ -36,7 +36,7 @@ public class LeapController: MonoBehaviour {
 			if(canSetPrevious)
 				StartCoroutine(SetPrevious(currentMiddleFingerTipPosition, currentIndexFingerTipPosition));
 
-            if(Mathf.Abs(currentIndexFingerTipPosition.z - previousIndexFingerTipPosition.z) > 150f && Mathf.Abs(currentIndexFingerTipPosition.y - previousIndexFingerTipPosition.y) < 50f  && Mathf.Abs(currentIndexFingerTipPosition.x - previousIndexFingerTipPosition.x) < 40f)  
+            if(Mathf.Abs(currentIndexFingerTipPosition.z - previousIndexFingerTipPosition.z) > 150f && Mathf.Abs(currentIndexFingerTipPosition.y - previousIndexFingerTipPosition.y) < 60f  && Mathf.Abs(currentIndexFingerTipPosition.x - previousIndexFingerTipPosition.x) < 60f)  
 				GetComponent<RevealMenuItems>().revealMenu();
 			///Debug.Log(currentIndexFingerTipPosition.x - previousIndexFingerTipPosition.x);
 

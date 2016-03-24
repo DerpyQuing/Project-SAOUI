@@ -56,15 +56,42 @@ public class ChildController : MonoBehaviour {
 		return false;
 	}
 
-
-	public bool test = false;
-	void Update () {
-		if(test) {
-			test = false;
-			children[0].GetComponent<MenuItemController>().Hover = true;
+	
+	public void revealItem(GameObject gm, string shape) {
+		Debug.Log(gm.name);
+		Debug.Log(shape);
+		if(shape.Equals("rectangle")) {
+			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
+				boxCollider.enabled = true;
+			
+			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
+				spriteRenderer.enabled = true;
+			
+			gm.GetComponentInChildren<MeshRenderer>().enabled = true;
+			
+		} else if(shape.Equals("circle")) {
+			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
+				capsuleCollider.enabled = true;
+			gm.GetComponentInChildren<SpriteRenderer>().enabled = true;
 		}
 	}
 
+	public void hideItem(GameObject gm, string shape) {
+		if(shape.Equals("rectangle")) {
+			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
+				boxCollider.enabled = false;
+			
+			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
+				spriteRenderer.enabled = false;
+			
+			gm.GetComponentInChildren<MeshRenderer>().enabled = false;
+			
+		} else if(shape.Equals("circle")) {
+			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
+				capsuleCollider.enabled = false;
+			gm.GetComponentInChildren<SpriteRenderer>().enabled = false;
+		}
+	}
 
 
 

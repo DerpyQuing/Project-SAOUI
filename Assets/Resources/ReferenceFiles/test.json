@@ -935,7 +935,7 @@
       },
       "Message":{
          "_baseIconPath":"SAO/Icons/Message",
-         "_activeIconPath":"SAO/Icons/Message",
+         "_activeIconPath":"SAO/Icons/Message_on",
          "_name":"Message",
          "_hasChildren":true,
          "_itemShape":"circle",
@@ -954,6 +954,7 @@
             "_baseIconPath":"SAO/Icons/Help",
             "_activeIconPath":"SAO/Icons/Help_on",
             "_text":"Trade",
+            "_name":"Message",
             "_hasChildren":false,
             "_itemShape":"rectangle",
             "_childrenAreList":false,

@@ -10,6 +10,8 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public ChildController childController;
 
+	public ChildController myChildrenController;
+
 	public GameObject hoverObject;
 	public CollisionController hoverController;
 
@@ -48,7 +50,7 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 	}
 
 	public MenuItemController(JSONNode jsonNode, GameObject menuItem) {
-		Debug.Log("Does this get called now");
+		Debug.Log("This shouldn't get called");
 	}
 
 	// Come up with a better method name
@@ -67,20 +69,29 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	}
 
+	public void setChildrenController() {
+		if(jsonNode["_hasChildren"].AsBool) {
+			myChildrenController = transform.FindChild("childContainer").GetComponent<ChildController>();
+		}
+	}
+
 	public void setItemParent() {
 		if(jsonNode["_parent"] != null) {
-			Debug.Log(GameObject.Find(jsonNode["_parent"]));
 			if(GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer") == null) {
 				GameObject childContainer = new GameObject("childContainer");
-				childController = childContainer.AddComponent<ChildController>();
+				childContainer.AddComponent<ChildController>();
+				childController = childContainer.GetComponent<ChildController>();
 				childContainer.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform);
 				childContainer.transform.localPosition = Vector3.zero;
 			}
 			menuItem.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform.FindChild("childContainer").transform);
 		} else if(jsonNode["_parent"] == null) {
 			menuItem.transform.SetParent(GameObject.Find("MenuHolder").transform);
+			childController = GameObject.Find("MenuHolder").GetComponent<ChildController>();
+
 		} else
 			Debug.Log("Parent Error");
+
 	}
 
 	public void changeAlpha(float newAlpha) {
@@ -104,6 +115,40 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
     public Transform getParentTransform(string parent) {
         return GameObject.Find(parent).transform.Find("childContainer").transform;
     }
+
+	public void revealChildren() {
+		for(int childIndex = 0; childIndex < jsonNode.Count; childIndex++) {
+			if(jsonNode[childIndex]["_hasChildren"] != null) {
+				Debug.Log("in 1");
+				if(!jsonNode[childIndex]["_hasChildren"].AsBool) {
+					foreach(GameObject gm in myChildrenController.children) {
+						if(gm.name == jsonNode[childIndex]["_name"] + "-" + jsonNode[childIndex]["_parent"]) {
+							childController.revealItem(gm, jsonNode[childIndex]["_itemShape"]);
+						}
+						Debug.Log(gm.name);
+
+					}
+				} else if(jsonNode[childIndex]["_hasChildren"].AsBool) {
+					Debug.Log("hi");
+					foreach(GameObject gm in myChildrenController.children) {
+						if(gm.name == jsonNode[childIndex]["_name"]) {
+							childController.revealItem(gm, jsonNode[childIndex]["_itemShape"]);
+						}
+						Debug.Log(gm.name);
+					}
+				}
+			}
+		}
+
+	}
+	
+	public void hideChildren() {
+		for(int childIndex = 0; childIndex < jsonNode.Count; childIndex++) {
+			if(jsonNode[childIndex]["_hasChildren"] != null) {
+				childController.hideItem(childController.children[childIndex], jsonNode[childIndex]["_itemShape"]);
+			}
+		}
+	}
 
 	// We'll override these in the children
 	public virtual void handleHover () {}

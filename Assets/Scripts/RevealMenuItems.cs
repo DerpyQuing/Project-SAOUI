@@ -9,18 +9,12 @@ public class RevealMenuItems : MonoBehaviour {
 	public GameObject[] allMenuItems;
 
 	public bool isMenuRevealed = false;
-
-	public bool isTrue = false;
-
+	
 	// Use this for initialization
 	void Start () {
 		menuHolder = GameObject.Find("MenuHolder");
 	}
 
-	void Update() {
-		if(isTrue)
-			hideMenu();
-	}
 
 	public void updateMenuItemsReference() {
 		allMenuItems = GameObject.FindGameObjectsWithTag("MenuItem");
@@ -29,7 +23,7 @@ public class RevealMenuItems : MonoBehaviour {
 	public void revealMenu() {
 		if(!isMenuRevealed) {
 			foreach(Transform childTransform in menuHolder.transform) {
-				childTransform.gameObject.SetActive(true);
+				revealItem(childTransform.gameObject, "circle");
 			}
 		}
 	}
@@ -46,13 +40,50 @@ public class RevealMenuItems : MonoBehaviour {
 				if(jsonNode[i]["_hasChildren"].AsBool) {
 					hideAllItems(jsonNode[i]); 
 				}
-				if(jsonNode[i]["_text"] != null) {
-					GameObject.Find(jsonNode[i]["_text"]).SetActive(false);
-				} else if(jsonNode[i]["_name"] != null) {
-					GameObject.Find(jsonNode[i]["_name"]).SetActive(false);
-				} 
+				
+				if(!jsonNode[i]["_hasChildren"].AsBool) 
+					hideItem(GameObject.Find(jsonNode[i]["_name"] + "-" + jsonNode[i]["_parent"]), jsonNode[i]["_itemShape"]);
+				else
+					hideItem(GameObject.Find(jsonNode[i]["_name"]), jsonNode[i]["_itemShape"]);
+				
 			}
 		}
 	}
+	
+	public void hideItem(GameObject gm, string shape) {
+		if(shape.Equals("rectangle")) {
+			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
+				boxCollider.enabled = false;
+			
+			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
+				spriteRenderer.enabled = false;
+			
+			gm.GetComponentInChildren<MeshRenderer>().enabled = false;
+			
+		} else if(shape.Equals("circle")) {
+			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
+				capsuleCollider.enabled = false;
+			gm.GetComponentInChildren<SpriteRenderer>().enabled = false;
+		}
+	}
+
+	
+	public void revealItem(GameObject gm, string shape) {
+		if(shape.Equals("rectangle")) {
+			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
+				boxCollider.enabled = true;
+			
+			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
+				spriteRenderer.enabled = true;
+			
+			gm.GetComponentInChildren<MeshRenderer>().enabled = true;
+			
+		} else if(shape.Equals("circle")) {
+			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
+				capsuleCollider.enabled = true;
+			gm.GetComponentInChildren<SpriteRenderer>().enabled = true;
+		}
+	}
+
 
 }

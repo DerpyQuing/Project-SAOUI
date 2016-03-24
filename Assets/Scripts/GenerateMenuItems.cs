@@ -114,11 +114,13 @@ public class GenerateMenuItems : MonoBehaviour {
 	}
 
 	#endregion
+
+
 	
 
 	IEnumerator hideAllItemsCorutine(JSONNode jsonNode)
 	{
-		yield return new WaitForSeconds(6);
+		yield return new WaitForSeconds(4);
 		hideAllItems(jsonNode);
 	}
 	
@@ -131,36 +133,33 @@ public class GenerateMenuItems : MonoBehaviour {
 				}
 
 				if(!jsonNode[i]["_hasChildren"].AsBool) 
-					hideItem(GameObject.Find(jsonNode[i]["_name"] + "-" + jsonNode[i]["_parent"]), jsonNode[i]["_itemShape"], jsonNode[i]);
+					hideItem(GameObject.Find(jsonNode[i]["_name"] + "-" + jsonNode[i]["_parent"]), jsonNode[i]["_itemShape"]);
 				else
-					hideItem(GameObject.Find(jsonNode[i]["_name"]), jsonNode[i]["_itemShape"], jsonNode[i]);
+					hideItem(GameObject.Find(jsonNode[i]["_name"]), jsonNode[i]["_itemShape"]);
 				
 			}
 		}
 	}
 
-	public void hideItem(GameObject gameobject, string shape, JSONNode jsonNode) {
-		Debug.Log(jsonNode["_text"] + " + " + jsonNode["_name"]);
+	public void hideItem(GameObject gm, string shape) {
+
+		// I'm too tired to figure out a better place for this. This whole thing is a fucking mess
+		gm.GetComponent<MenuItemController>().setChildrenController();
 		if(shape.Equals("rectangle")) {
-			foreach(BoxCollider boxCollider in gameobject.GetComponentsInChildren<BoxCollider>())
+			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
 				boxCollider.enabled = false;
 
-			foreach(SpriteRenderer spriteRenderer in gameobject.GetComponentsInChildren<SpriteRenderer>())
+			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
 				spriteRenderer.enabled = false;
 
-			gameobject.GetComponentInChildren<MeshRenderer>().enabled = false;
+			gm.GetComponentInChildren<MeshRenderer>().enabled = false;
 
 		} else if(shape.Equals("circle")) {
-			foreach(CapsuleCollider capsuleCollider in gameobject.GetComponentsInChildren<CapsuleCollider>())
+			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
 				capsuleCollider.enabled = false;
-			gameobject.GetComponentInChildren<SpriteRenderer>().enabled = false;
+			gm.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
-
 	}
-
-
-
-
 
 
 }

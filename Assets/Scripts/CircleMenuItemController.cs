@@ -117,6 +117,7 @@ public class CircleMenuItemController : MenuItemController {
 
 	public override void handleHover () {
 		// If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
+
 		if(!childController.isAChildHovered() && !childController.isAChildPressed()) {
 			Hover = true;
 			iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
@@ -139,7 +140,7 @@ public class CircleMenuItemController : MenuItemController {
 		Press = false;
 		if(Hover && !childController.isAChildPressed()) {
 			Selected = true;
-			// unhide the children
+			revealChildren();
 		}
 	}
 
