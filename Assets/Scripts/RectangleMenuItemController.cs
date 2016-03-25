@@ -57,7 +57,7 @@ public class RectangleMenuItemController : MenuItemController
     public override void handleCreation() {
         handleHoverInit();
         handlePressInit();
-        handleIcon();
+        handleBox();
         handleSubIcon();
         handleText();
         handleTransform();
@@ -85,7 +85,7 @@ public class RectangleMenuItemController : MenuItemController
         pressController.ColliderSize = pressBoxSize;
     }
 
-    public void handleIcon() {
+    public void handleBox() {
         iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath);
     }
 
@@ -125,8 +125,39 @@ public class RectangleMenuItemController : MenuItemController
             childrenAreList = jsonNode["_childrenAreList"].AsBool;
     }
 
-    void Start() {
+	public override void handleHover() {
+		// If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
+		if (!childController.isAChildHovered() && !childController.isAChildPressed()) {
+			Hover = true;
+			subIconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
+			iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath + "_hover");
+		}
+	}
+	
+	public override void handlePress() {
+		if (Hover && !childController.isAChildPressed()) {
+			Press = true;
+			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
+		}
+	}
+	
+	public override void handleHoverLoss() {
+		Hover = false;
+		if (!Selected) {
+			subIconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+			iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath);
+		}
+	}
+	
+	public override void handlePressLoss() {
+		Press = false;
+		if (Hover && !childController.isAChildPressed()) {
+			Selected = true;
+			revealChildren();
+		}
+	}
 
-    }
+
+    void Start() {  }
 
 }

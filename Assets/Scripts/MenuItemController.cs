@@ -78,12 +78,15 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	public void setItemParent() {
 		if(jsonNode["_parent"] != null) {
+			//Transform childContainer = GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer");
 			if(GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer") == null) {
 				GameObject childContainer = new GameObject("childContainer");
 				childContainer.AddComponent<ChildController>();
 				childController = childContainer.GetComponent<ChildController>();
 				childContainer.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform);
 				childContainer.transform.localPosition = Vector3.zero;
+			} else {
+				childController = GameObject.Find(jsonNode["_parent"]).transform.Find("childContainer").GetComponent<ChildController>();
 			}
 			menuItem.transform.SetParent(GameObject.Find(jsonNode["_parent"]).transform.FindChild("childContainer").transform);
 		} else if(jsonNode["_parent"] == null) {
@@ -120,22 +123,18 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 	public void revealChildren() {
 		for(int childIndex = 0; childIndex < jsonNode.Count; childIndex++) {
 			if(jsonNode[childIndex]["_hasChildren"] != null) {
-				Debug.Log("in 1");
 				if(!jsonNode[childIndex]["_hasChildren"].AsBool) {
 					foreach(GameObject gm in myChildrenController.children) {
 						if(gm.name == jsonNode[childIndex]["_name"] + "-" + jsonNode[childIndex]["_parent"]) {
 							childController.revealItem(gm, jsonNode[childIndex]["_itemShape"]);
 						}
-						Debug.Log(gm.name);
 
 					}
 				} else if(jsonNode[childIndex]["_hasChildren"].AsBool) {
-					Debug.Log("hi");
 					foreach(GameObject gm in myChildrenController.children) {
-						if(gm.name == jsonNode[childIndex]["_name"]) {
+						if(gm.name.Equals(jsonNode[childIndex]["_name"])) {
 							childController.revealItem(gm, jsonNode[childIndex]["_itemShape"]);
 						}
-						Debug.Log(gm.name);
 					}
 				}
 			}
@@ -151,35 +150,12 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 		}
 	}
 
-   // These seem like there are better off here
-    public void handleHover() {
-        // If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
+    public virtual void handleHover() { }
 
-        if (!childController.isAChildHovered() && !childController.isAChildPressed()) {
-            Hover = true;
-            iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
-        }
-    }
+    public virtual void handlePress() { }
 
-    public void handlePress() {
-        if (Hover && !childController.isAChildPressed()) {
-            Press = true;
-            // I'm not going to have a pressed ver of the icons. Could add it here if wanted.
-        }
-    }
+    public virtual void handleHoverLoss() { }
 
-    public void handleHoverLoss() {
-        Hover = false;
-        if (!Selected)
-            iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
-    }
-
-    public void handlePressLoss() {
-        Press = false;
-        if (Hover && !childController.isAChildPressed()) {
-            Selected = true;
-            revealChildren();
-        }
-    }
+    public virtual void handlePressLoss() { }
 
 }

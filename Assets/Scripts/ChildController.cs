@@ -58,45 +58,39 @@ public class ChildController : MonoBehaviour {
 
 	
 	public void revealItem(GameObject gm, string shape) {
-		Debug.Log(gm.name);
-		Debug.Log(shape);
 		if(shape.Equals("rectangle")) {
-			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
-				boxCollider.enabled = true;
-			
-			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
-				spriteRenderer.enabled = true;
-			
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<SpriteRenderer>()[i].enabled = true;
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<BoxCollider>()[i].enabled = true;
 			gm.GetComponentInChildren<MeshRenderer>().enabled = true;
 			
 		} else if(shape.Equals("circle")) {
-			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
-				capsuleCollider.enabled = true;
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<CapsuleCollider>()[i].enabled = true;
 			gm.GetComponentInChildren<SpriteRenderer>().enabled = true;
 		}
 	}
 
 	public void hideItem(GameObject gm, string shape) {
 		if(shape.Equals("rectangle")) {
-			foreach(BoxCollider boxCollider in gm.GetComponentsInChildren<BoxCollider>())
-				boxCollider.enabled = false;
-			
-			foreach(SpriteRenderer spriteRenderer in gm.GetComponentsInChildren<SpriteRenderer>())
-				spriteRenderer.enabled = false;
-			
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<BoxCollider>()[i].enabled = false;
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<SpriteRenderer>()[i].enabled = false;
 			gm.GetComponentInChildren<MeshRenderer>().enabled = false;
 			
 		} else if(shape.Equals("circle")) {
-			foreach(CapsuleCollider capsuleCollider in gm.GetComponentsInChildren<CapsuleCollider>())
-				capsuleCollider.enabled = false;
+			for(int i = 0; i < 2; i++) 
+				gm.GetComponentsInChildren<CapsuleCollider>()[i].enabled = false;
 			gm.GetComponentInChildren<SpriteRenderer>().enabled = false;
 		}
 	}
 
 
-
+	// .....
 	IEnumerator waitForSetup() {
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(2);
 		handleChildrenSetup();
 	}
 

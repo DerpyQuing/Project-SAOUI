@@ -108,9 +108,41 @@ public class CircleMenuItemController : MenuItemController {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
 			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], gameObject.name)];
 		} else {
-			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.41f);
+			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.34f);
 		}
 	}
+
+	public override void handleHover() {
+		// If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
+		
+		if (!childController.isAChildHovered() && !childController.isAChildPressed()) {
+			Hover = true;
+			iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
+		}
+	}
+	
+	public override void handlePress() {
+		if (Hover && !childController.isAChildPressed()) {
+			Press = true;
+			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
+		}
+	}
+	
+	public override void handleHoverLoss() {
+		Hover = false;
+		if (!Selected)
+			iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+	}
+	
+	public override void handlePressLoss() {
+		Press = false;
+		if (Hover && !childController.isAChildPressed()) {
+			Selected = true;
+			revealChildren();
+		}
+	}
+
+
 
 	void Start() {
 	}
