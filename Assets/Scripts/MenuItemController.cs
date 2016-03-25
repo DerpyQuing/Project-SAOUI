@@ -55,10 +55,7 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	// Come up with a better method name
 	public void betterMethodName(JSONNode jsonNode, GameObject menuItem) {
-		this.jsonNode = jsonNode;
-		this.menuItem = menuItem;
-
-
+		
 		hoverObject = menuItem.transform.FindChild("hover").gameObject;
 		hoverController = hoverObject.GetComponent<CollisionController>();
 		
@@ -69,7 +66,11 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 
 	}
 
-	public void setChildrenController() {
+    public virtual void giveData(JSONNode jsonNode, GameObject menuItem) { }
+    public virtual void handleCreation() { }
+    public virtual void handlePosition() { }
+
+    public void setChildrenController() {
 		if(jsonNode["_hasChildren"].AsBool) {
 			myChildrenController = transform.FindChild("childContainer").GetComponent<ChildController>();
 		}
@@ -150,11 +151,35 @@ public class MenuItemController : MonoBehaviour, IHover, IPress {
 		}
 	}
 
-	// We'll override these in the children
-	public virtual void handleHover () {}
-	public virtual void handleHoverLoss() {}
-	public virtual void handlePress() {}
-	public virtual void handlePressLoss() {}
+   // These seem like there are better off here
+    public void handleHover() {
+        // If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
 
+        if (!childController.isAChildHovered() && !childController.isAChildPressed()) {
+            Hover = true;
+            iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
+        }
+    }
+
+    public void handlePress() {
+        if (Hover && !childController.isAChildPressed()) {
+            Press = true;
+            // I'm not going to have a pressed ver of the icons. Could add it here if wanted.
+        }
+    }
+
+    public void handleHoverLoss() {
+        Hover = false;
+        if (!Selected)
+            iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+    }
+
+    public void handlePressLoss() {
+        Press = false;
+        if (Hover && !childController.isAChildPressed()) {
+            Selected = true;
+            revealChildren();
+        }
+    }
 
 }

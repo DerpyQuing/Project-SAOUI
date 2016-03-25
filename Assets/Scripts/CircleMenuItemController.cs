@@ -54,18 +54,17 @@ public class CircleMenuItemController : MenuItemController {
 
 
 	// Calling this gets things started
-	public void giveData(JSONNode jsonNode, GameObject menuItem) {
-		base.jsonNode = jsonNode;
-		base.menuItem = menuItem;
-		base.betterMethodName(jsonNode, menuItem);
+	public override void giveData(JSONNode jsonNode, GameObject menuItem) {
+		this.jsonNode = jsonNode;
+		this.menuItem = menuItem;
+	    betterMethodName(jsonNode, menuItem);
 	}
 
-	public void handleCreation() {
+	public override void handleCreation() {
 		handleHoverInit();
 		handlePressInit();
 		handleIcon();
 		handleTransform();
-
 	}
 	
 	// Since there are overlaps for the Press and Hover inits (below), we take those duplicate lines out and put them in here
@@ -101,46 +100,15 @@ public class CircleMenuItemController : MenuItemController {
 	public void handleTransform() {
 		setItemParent();
 		transform.localScale = scaleContainer[jsonNode["_type"]];
-		handlePosition();
 		//		transform.localRotation = rotation;
 
 	}
 
-	public void handlePosition() {
+	public override void handlePosition() {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
 			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], gameObject.name)];
 		} else {
 			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.41f);
-		}
-	}
-
-
-	public override void handleHover () {
-		// If any other child is hovered, skip this. Same for pressed. That way there are no duplicates
-
-		if(!childController.isAChildHovered() && !childController.isAChildPressed()) {
-			Hover = true;
-			iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
-		}
-	}
-	
-	public override void handlePress() {
-		if(Hover && !childController.isAChildPressed()) { 
-			Press = true;
-			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
-		}
-	}
-
-	public override void handleHoverLoss () {
-		iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
-		Hover = false;
-	}
-	
-	public override void handlePressLoss () {
-		Press = false;
-		if(Hover && !childController.isAChildPressed()) {
-			Selected = true;
-			revealChildren();
 		}
 	}
 

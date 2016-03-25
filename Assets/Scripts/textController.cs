@@ -18,12 +18,14 @@ public class TextController : MonoBehaviour {
 	private string text;
 	private int textSize;
 
+    // We call this to get our textMesh and MeshRenderer componenets
 	void Awake () {
 		textMesh = GetComponent<TextMesh>();
 		meshRenderer = GetComponent<MeshRenderer>();
 	}
 
 	#region Setters and Getters    
+    // Lets us get/set the text itself
 	public string Text {
 		get { return text; }
 		set { 
@@ -32,6 +34,7 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
+    // Lets us get/set the Text Position
 	public Vector3 TextPosition {
 		get { return textPosition; }
 		set { 
@@ -39,8 +42,8 @@ public class TextController : MonoBehaviour {
 			transform.localPosition = value;
 		}
 	}
-
-	public Vector3 TextScale {
+    // Lets us get/set the Text Scale
+    public Vector3 TextScale {
 		get { return textScale; }
 		set {
 			textScale = value;
@@ -48,7 +51,8 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	public int TextSize {
+    // Lets us get/set the Text Size
+    public int TextSize {
 		get { return textSize; }
 		set {
 			textSize = value;
@@ -56,7 +60,8 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	public Color TextColor {
+    // Lets us get/set the Text Color
+    public Color TextColor {
 		get { return textColor; }
 		set {
 			textColor = value;
@@ -64,7 +69,8 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	public int SortingOrder {
+    // Lets us get/set the sorting order for the text
+    public int SortingOrder {
 		get { return sortingOrder; }
 		set {
 			sortingOrder = value;
@@ -72,7 +78,8 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	public Font TextFont {
+    // Lets us get/set the Text font
+    public Font TextFont {
 		get { return textFont; }
 		set {
 			textFont = value;
@@ -80,10 +87,9 @@ public class TextController : MonoBehaviour {
 		}
 	}
 
-	#endregion
+    #endregion
 
-	void Start() {
-
-	}
+    // Try commenting it out now that I have Awake()
+    void Start() { }
 	
 }
