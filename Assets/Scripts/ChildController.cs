@@ -4,33 +4,47 @@ using SimpleJSON;
 
 public class ChildController : MonoBehaviour {
 
-	public GameObject[] children;
+    public GameObject[] children;
 
-	// Use this for initialization
-	void Start () {
-		StartCoroutine(waitForSetup());
-	}
-	
-	void handleChildrenSetup() {
-		children = new GameObject[transform.childCount];
-		for(int childIndex = 0; childIndex < transform.childCount; childIndex++) {
-			children[childIndex] = transform.GetChild(childIndex).gameObject;
-		}
-	}
+    void Start() {
+        handleChildrenSetup();
+    }
 
-	public void handleChildHover(string childName) {
-		foreach(GameObject child in children) {
-			if(child.name != childName)
-				child.GetComponent<MenuItemController>().Hover = false;
-		}
-	}
+    public void handleChildrenSetup() {
+        children = new GameObject[transform.childCount];
+        for (int childIndex = 0; childIndex < transform.childCount; childIndex++) {
+            children[childIndex] = transform.GetChild(childIndex).gameObject;
+        }
+    }
 
-	public void handleChildPress(string childName) {
-		foreach(GameObject child in children) {
-			if(child.name != childName)
-				child.GetComponent<MenuItemController>().Press = false;
-		}
-	}
+    public void handleChildHover(string childName) {
+        foreach (GameObject child in children) {
+            if (child.name != childName)
+                child.GetComponent<MenuItemController>().Hover = false;
+        }
+    }
+
+    public void handleChildPress(string childName) {
+        foreach (GameObject child in children) {
+            if (child.name != childName)
+                child.GetComponent<MenuItemController>().Press = false;
+        }
+    }
+
+    public void handleChildSelection(string childName) {
+        foreach (GameObject child in children) {
+            if (child.name != childName) {
+                child.GetComponent<MenuItemController>().Selected = false;
+                child.GetComponent<MenuItemController>().fade();
+            }
+        }
+    }
+
+    public void handleChildSelectionLoss() {
+        foreach (GameObject child in children) {
+            child.GetComponent<MenuItemController>().unfade();
+        }
+    }
 
 	public bool isAChildHovered() {
 		foreach(GameObject child in children) {
@@ -79,20 +93,19 @@ public class ChildController : MonoBehaviour {
 			for(int i = 0; i < 2; i++) 
 				gm.GetComponentsInChildren<SpriteRenderer>()[i].enabled = false;
 			gm.GetComponentInChildren<MeshRenderer>().enabled = false;
-			
-		} else if(shape.Equals("circle")) {
+            // Cleaning
+            gm.GetComponent<RectangleMenuItemController>().subIconController.Image = Resources.Load<Sprite>(gm.GetComponent<RectangleMenuItemController>().jsonNode["_baseIconPath"]);
+            gm.GetComponent<RectangleMenuItemController>().iconController.Image = Resources.Load<Sprite>(gm.GetComponent<RectangleMenuItemController>().rectangleIconBasePath);
+            gm.GetComponent<RectangleMenuItemController>().Selected = false;
+
+        } else if(shape.Equals("circle")) {
 			for(int i = 0; i < 2; i++) 
 				gm.GetComponentsInChildren<CapsuleCollider>()[i].enabled = false;
 			gm.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            // Cleaning
+            gm.GetComponent<CircleMenuItemController>().Selected = false;
+            gm.GetComponent<CircleMenuItemController>().iconController.Image = Resources.Load<Sprite>(gm.GetComponent<CircleMenuItemController>().jsonNode["_baseIconPath"]);
+           
 		}
 	}
-
-
-	// .....
-	IEnumerator waitForSetup() {
-		yield return new WaitForSeconds(2);
-		handleChildrenSetup();
-	}
-
-
 }

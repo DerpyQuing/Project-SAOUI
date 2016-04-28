@@ -108,7 +108,7 @@ public class CircleMenuItemController : MenuItemController {
 		if(jsonNode["_type"].ToString().Equals(@"""small""")) {
 			transform.localPosition = smallIconLocations[(int)getMyGroupIndex(jsonNode["_parent"], gameObject.name)];
 		} else {
-			transform.localPosition = new Vector3(-0.178f, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.34f);
+			transform.localPosition = new Vector3(0, transform.localPosition.y - yPositionContainer[jsonNode["_type"]] * getMyGroupIndex(jsonNode["_parent"] , gameObject.name) - .17f, 0.34f);
 		}
 	}
 
@@ -117,6 +117,7 @@ public class CircleMenuItemController : MenuItemController {
 		
 		if (!childController.isAChildHovered() && !childController.isAChildPressed()) {
 			Hover = true;
+            childController.handleChildHover(name);
 			iconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
 		}
 	}
@@ -124,9 +125,9 @@ public class CircleMenuItemController : MenuItemController {
 	public override void handlePress() {
 		if (Hover && !childController.isAChildPressed()) {
 			Press = true;
-			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
-		}
-	}
+            childController.handleChildPress(name);
+        }
+    }
 	
 	public override void handleHoverLoss() {
 		Hover = false;
@@ -136,15 +137,31 @@ public class CircleMenuItemController : MenuItemController {
 	
 	public override void handlePressLoss() {
 		Press = false;
-		if (Hover && !childController.isAChildPressed()) {
+        audioController.playPressSound();
+        if (Hover && !Selected && !childController.isAChildPressed()) {
 			Selected = true;
 			revealChildren();
-		}
+			childController.handleChildSelection(gameObject.name);
+		} else if (Hover && Selected && !childController.isAChildPressed()) {
+            Selected = false;
+            onSelectionLoss();
+        }
+    }
+
+	public override void onSelectionLoss() {
+		hideChildren(jsonNode);
+		iconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
 	}
 
+    public override void fade() {
+        iconController.SpriteColor = unfocusedColor;
+    }
 
+    public override void unfade() {
+        iconController.SpriteColor = baseColor;
+    }
 
-	void Start() {
+    void Start() {
 	}
 
 

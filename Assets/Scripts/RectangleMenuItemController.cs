@@ -36,7 +36,9 @@ public class RectangleMenuItemController : MenuItemController
     public Color textColorNormal = Color.gray;
     public Color textColorRaised = Color.white;
     public Color textColorFaded = new Color(Color.gray.r, Color.gray.g, Color.gray.b, .588f);
-    public int textSortingOrder = 102;
+
+    // Make sure this works
+    public int textSortingOrder = 1;
     public Font textFont;
 
     // Misc
@@ -131,14 +133,17 @@ public class RectangleMenuItemController : MenuItemController
 			Hover = true;
 			subIconController.Image = Resources.Load<Sprite>(jsonNode["_activeIconPath"]);
 			iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath + "_hover");
-		}
-	}
+            childController.handleChildHover(name);
+            textController.TextColor = textColorRaised;
+        }
+    }
 	
 	public override void handlePress() {
 		if (Hover && !childController.isAChildPressed()) {
 			Press = true;
+            childController.handleChildPress(name);
 			// I'm not going to have a pressed ver of the icons. Could add it here if wanted.
-		}
+		} 
 	}
 	
 	public override void handleHoverLoss() {
@@ -146,17 +151,46 @@ public class RectangleMenuItemController : MenuItemController
 		if (!Selected) {
 			subIconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
 			iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath);
+            textController.TextColor = textColorNormal;
 		}
 	}
 	
 	public override void handlePressLoss() {
 		Press = false;
-		if (Hover && !childController.isAChildPressed()) {
+        playPressSound();
+        if (Hover && !Selected && !childController.isAChildPressed()) {
 			Selected = true;
 			revealChildren();
-		}
-	}
+			childController.handleChildSelection(gameObject.name);
+            // Baaaaaaaaaaaaddddd
+            iconController.SpriteColor = baseColor;
+            subIconController.SpriteColor = baseColor;
+        } else if (Hover && Selected && !childController.isAChildPressed()) {
+            Selected = false;
+            onSelectionLoss();
+            childController.handleChildSelectionLoss();
+        }
 
+    }
+
+	public override void onSelectionLoss() {
+        hideChildren(jsonNode);
+		subIconController.Image = Resources.Load<Sprite>(jsonNode["_baseIconPath"]);
+		iconController.Image = Resources.Load<Sprite>(rectangleIconBasePath);
+        textController.TextColor = textColorNormal;
+    }
+
+    public override void fade() {
+        iconController.SpriteColor = unfocusedColor;
+        subIconController.SpriteColor = unfocusedColor;
+        textController.TextColor = textColorFaded;
+    }
+
+    public override void unfade() {
+        iconController.SpriteColor = baseColor;
+        subIconController.SpriteColor = baseColor;
+        textController.TextColor = textColorNormal;
+    }
 
     void Start() {  }
 

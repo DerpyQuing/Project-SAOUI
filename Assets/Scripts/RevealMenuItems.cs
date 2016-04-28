@@ -9,10 +9,12 @@ public class RevealMenuItems : MonoBehaviour {
 	public GameObject[] allMenuItems;
 
 	public bool isMenuRevealed = false;
+
+    public AudioController audioController;
 	
-	// Use this for initialization
 	void Start () {
 		menuHolder = GameObject.Find("MenuHolder");
+        audioController = menuHolder.GetComponent<AudioController>();
 	}
 
 
@@ -22,7 +24,9 @@ public class RevealMenuItems : MonoBehaviour {
 
 	public void revealMenu() {
 		if(!isMenuRevealed) {
-			foreach(Transform childTransform in menuHolder.transform) {
+            audioController.playMenuCreationSound();
+            isMenuRevealed = true;
+            foreach (Transform childTransform in menuHolder.transform) {
 				revealItem(childTransform.gameObject, "circle");
 			}
 		}
@@ -30,7 +34,9 @@ public class RevealMenuItems : MonoBehaviour {
 
 	public void hideMenu() {
 		if(isMenuRevealed) {
-			hideAllItems(menuHolder.GetComponent<GenerateMenuItems>()._jsonNode["Menu"]);
+            audioController.playMenuDismissalSound();
+            isMenuRevealed = false;
+            hideAllItems(menuHolder.GetComponent<GenerateMenuItems>()._jsonNode["Menu"]);
 		}
 	}
 

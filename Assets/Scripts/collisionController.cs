@@ -23,14 +23,10 @@ public class CollisionController : MonoBehaviour {
 
 	private Vector3 colliderSize;
 
-	/*
-	private Transform parent;
-	private RectangleMenuItemController rectangleMenuItemController;
-	private CircleMenuItemController circleMenuItemController;
-	*/
-
 	private IHover iHover;
 	private IPress iPress;
+
+    public bool state = false;
 	
 	void Start () {
 		StartCoroutine(wait(2));
@@ -142,20 +138,20 @@ public class CollisionController : MonoBehaviour {
 	void OnTriggerEnter(Collider other) {
 		if (other.name == "bone3" && allowTouch)
 			if(isHover)
-				iHover.handleHover();
-			else 
+                iHover.handleHover();
+            else 
 				iPress.handlePress();
-	}
-	
-	void OnTriggerExit(Collider other) {
+    }
+
+    void OnTriggerExit(Collider other) {
 		if (other.name == "bone3" && allowTouch)
 			if(isHover)
 				iHover.handleHoverLoss();
 			else 
 				iPress.handlePressLoss();
-	}
-	
-	public IEnumerator wait(int seconds) {
+    }
+
+    public IEnumerator wait(int seconds) {
 		yield return new WaitForSeconds (seconds);
 		allowTouch = true;
 	}

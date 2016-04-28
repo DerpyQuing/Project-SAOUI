@@ -13,7 +13,7 @@ public class GenerateMenuItems : MonoBehaviour {
 	#endregion
 
 	public JSONNode _jsonNode;
-	
+
 	// Container for the prefabs above
 	public Dictionary<string, GameObject> menuItemPrefabContainer = new Dictionary<string, GameObject>();
 	
@@ -30,7 +30,7 @@ public class GenerateMenuItems : MonoBehaviour {
 		ReadFromFile readFromFile = new ReadFromFile();
 
 		// Parse the .json file into a string
-		string menu = readFromFile.LoadJSONResourceFile("ReferenceFiles/test.json");
+		string menu = readFromFile.LoadJSONResourceFile("ReferenceFiles/menu.json");
 
 		// Turn that string into a SimpleJSON JSONNode
 		_jsonNode = JSONNode.Parse(menu);
@@ -46,6 +46,13 @@ public class GenerateMenuItems : MonoBehaviour {
 
         // Hides the menu items
         hideAllItems(_jsonNode["Menu"]);
+
+		// Update a reference variable
+		GameObject.Find("GameManager").GetComponent<RevealMenuItems>().updateMenuItemsReference();
+
+        // Update the top level ChildController script
+        // For some reason, it is the only one that doesn't update
+        GameObject.Find("MenuHolder").GetComponent<ChildController>().handleChildrenSetup();
     }
 
     // Call this to create every item in the menu by using recursion
@@ -67,10 +74,9 @@ public class GenerateMenuItems : MonoBehaviour {
 
 	// Handles creating the GameObject, then passes it over to the proper method for giving it it's correct values and what not
 	public void createMenuItem(JSONNode jsonNode) {
-
 		// Instantiate an instace of the Menu Item Prefab we want. (Based of the "_itemShape" value)
 		// Set the position of this Menu Item at (0, -10f, 0) so its out of site (This can be adjusted)
-		GameObject menuItem = (GameObject) Instantiate(menuItemPrefabContainer[jsonNode["_itemShape"]], new Vector3(0f, 2f, 0f), Quaternion.identity);
+		GameObject menuItem = (GameObject) Instantiate(menuItemPrefabContainer[jsonNode["_itemShape"]], new Vector3(0f, 1.3f, 0f), Quaternion.identity);
         // Give the item a unique tag for .... reasons
 		menuItem.tag = "MenuItem";
 
